@@ -1,11 +1,11 @@
 ###############################################################
 # This script reads the data from the input files, creats a   #
-#  Convolutional Neural Network and train it. 					  #
-#																				  #
+#  Convolutional Neural Network and train it.                 #
+#                                                             #
 # Required files: data_std.pickle, refined_set_dataset.csv    #
-#																				  #
-# Written by: Mahmudulla Hassan										  #
-# Last Modified: 02/18/2018											  #
+#                                                             #
+# Written by: Mahmudulla Hassan                               #
+# Last Modified: 02/18/2018                                   #
 ###############################################################
 
 import pickle
@@ -51,12 +51,13 @@ def generator(data, batch_size):
     x[0, :, :, :, :] = data[rand_keys[0]]
     y = np.empty(batch_size)
     y[0] = np.float32(score[rand_keys[0]])
-
-    for i in range(1, len(rand_keys)):
-        x[i, :, :, :, :] = data[rand_keys[i]]
-        y[i] = score[rand_keys[i]]
     
-    yield (x, y)
+    while(True):
+        for i in range(1, len(rand_keys)):
+            x[i, :, :, :, :] = data[rand_keys[i]]
+            y[i] = score[rand_keys[i]]
+    
+        yield (x, y)
 
 def get_model(summary=False):
     """ Return the Keras model of the network
