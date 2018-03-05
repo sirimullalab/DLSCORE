@@ -13,4 +13,5 @@ scipy <br>
 
 <b>Contributors:</b> <br>
 Mahmudulla Hassan <br>
+Olac Fuentes <br>
 Suman Sirimulla <br>
