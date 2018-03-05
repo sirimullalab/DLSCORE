@@ -1,6 +1,6 @@
 # DLSCORE: A deep learning based scoring function for predicting protein-ligand binding affinity.
 
-Requirements: <br>
+<b>Requirements:</b> <br>
 python 3.5 <br>
 tensorflow <br>
 keras <br>
