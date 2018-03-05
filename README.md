@@ -11,3 +11,6 @@ pickle <br>
 scv <br>
 scipy <br>
 
+<b>Contributors:</b> <br>
+Mahmudulla Hassan
+Suman Sirimulla
