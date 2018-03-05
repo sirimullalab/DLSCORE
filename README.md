@@ -12,5 +12,5 @@ scv <br>
 scipy <br>
 
 <b>Contributors:</b> <br>
-Mahmudulla Hassan
-Suman Sirimulla
+Mahmudulla Hassan <br>
+Suman Sirimulla <br>
