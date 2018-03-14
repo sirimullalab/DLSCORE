@@ -2292,7 +2292,7 @@ def calculate_score(lig, rec, cmd_params, actual_filename_if_lig_is_list="", act
         total = 0.0
         #nets = networks()
         nets = []
-        with open("networks.pickle", "rb") as pickle_file:
+        with open("dl_networks_03/networks.pickle", "rb") as pickle_file:
                 nets = pickle.load(pickle_file)        
         
         output_dict = {}
