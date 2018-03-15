@@ -153,7 +153,7 @@ class ffnet:
 def dl_nets():
     """ Yields new set of deep learning based networks """
     # Read the networks
-    directory = 'dl_networks_04/'
+    directory = 'dl_networks_05/'
     with open(directory + 'sorted_models.pickle', 'rb') as f:
         model_files = pickle.load(f)
     with open(directory + 'sorted_weights.pickle', 'rb') as f:
@@ -2292,7 +2292,7 @@ def calculate_score(lig, rec, cmd_params, actual_filename_if_lig_is_list="", act
         total = 0.0
         #nets = networks()
         nets = []
-        with open("dl_networks_04/networks.pickle", "rb") as pickle_file:
+        with open("dl_networks_05/networks.pickle", "rb") as pickle_file:
                 nets = pickle.load(pickle_file)        
         
         output_dict = {}
@@ -2323,7 +2323,7 @@ def calculate_score(lig, rec, cmd_params, actual_filename_if_lig_is_list="", act
                 # Data processing
                 input_data = np.array(d.input_vector)
                 try:
-                    with open("dl_networks_04/transform.pickle", "rb") as f:
+                    with open("dl_networks_05/transform.pickle", "rb") as f:
                         transform = pickle.load(f)
                 except FileNotFoundError:
                     print("File transform.pickle not found")
