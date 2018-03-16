@@ -132,25 +132,8 @@ class ffnet:
         for k in range(1,len(self.outno)+1):
             self.output[k] = self.deo[k][1] * self.units[self.outno[k]] + self.deo[k][2]
 			
-			
-#def dlscore():
-    # Load the model
-#	with open("model.json", "r") as json_file:
-#	    loaded_model = model_from_json(json_file.read())
 
-	# Load weights
-#	loaded_model.load_weights("model.h5")
-
-	# Compile the model
-#	loaded_model.compile(
-#		loss='mean_squared_error',
-#		optimizer=keras.optimizers.Adam(lr=0.001),
-#		metrics=[metrics.MSE])
-	
-#	return loaded_model
-
-
-def dl_nets():
+def dl_nets(nb_nets):
     """ Yields new set of deep learning based networks """
     # Read the networks
     directory = 'dl_networks_05/'
@@ -161,7 +144,9 @@ def dl_nets():
     
     assert(len(model_files) == len(weight_files)), \
         'Number of model files and the weight files are not the same.'
-    for model, weight in zip(model_files, weight_files):
+    for i, (model, weight) in enumerate(zip(model_files, weight_files)):
+        if i==nb_nets:
+            break
         # Load the network
         with open(model, 'r') as json_file:
             loaded_model = model_from_json(json_file.read())
@@ -2322,34 +2307,24 @@ def calculate_score(lig, rec, cmd_params, actual_filename_if_lig_is_list="", act
                                 
                 # Data processing
                 input_data = np.array(d.input_vector)
-                try:
-                    with open("dl_networks_05/transform.pickle", "rb") as f:
-                        transform = pickle.load(f)
-                except FileNotFoundError:
-                    print("File transform.pickle not found")
+                with open("dl_networks_05/transform.pickle", "rb") as f:
+                    transform = pickle.load(f)
                 
                 input_data = (input_data - transform['mean'])/ transform['std']
                 
-                #with open("nonzero_column_indices.pickle", "rb") as f:
-                #    non_zero_columns = pickle.load(f)
-                # Filter the zero columns out
-                # input_data = input_data[non_zero_columns[:-1]] # ignoring the last column (y-value)
-                
                 # Load the neural networks
                 count = 1
-                max_value = 0.0
+                nb_nets = 10
                 print("\nNEURAL NETWORKS: ")
-                for dl_net in dl_nets():
+                for dl_net in dl_nets(nb_nets):
                     val = dl_net.predict(input_data.reshape(1, -1))[0][0]
                     #val = dl_net.predict(input_data.values.reshape(1, -1))[0][0]
-                    max_value = np.maximum(max_value, val)
                     print('\tNetwork # ', str(count), ' Score: ', val, ' (', score_to_kd(val), ')')
                     count = count + 1
                     output_dict[len(output_dict)] = val
                     # Delete the model and clear the session. 
                     del dl_net
                     K.clear_session()               
-                print("Max value from DLSCORE: ", max_value)
                 
                 # Save the predicted value in a csv
                 if not os.path.isdir('output'):
