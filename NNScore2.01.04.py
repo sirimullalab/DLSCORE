@@ -10,9 +10,9 @@
 #     provided by the new network doesn't count towards the overall performance   #
 #     of nnscore.py                                                               #
 #                                                                                 #
-#  Necessary files to run: dl_networks_03 [folder]		                          #
+#  Necessary files to run: dl_networks_05 [folder]		                          #
 #                                                                                 #
-# Last Modified by: Mahmudulla Hassan on 03/13/2018                               #
+# Last Modified by: Mahmudulla Hassan on 03/14/2018                               #
 ###################################################################################
 
 
