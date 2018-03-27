@@ -1,18 +1,13 @@
 ###################################################################################
 # This is a modified version of nnscore.py.  Contains a new set of neural         #
 # networks.                                                                       #
-# 																			      #
-# CHANGES:                                                                        #
-#   1. The method containing  weights of the neural networks is removed. Instead  #
-#     they are now saved into a pickle file (networks.pickle)                     #
-#   2. A new deep learning based model is added on experimental basis just to     #
-#     test the workflow of combining two types of networks together. The score    #
-#     provided by the new network doesn't count towards the overall performance   #
-#     of nnscore.py                                                               #
+# 																			                         #
+# CHANGES FROM VERSION 3:                                                         #
+#  1. The trained DL networks are sorted according to validation performance      #
 #                                                                                 #
-#  Necessary files to run: dl_networks_05 [folder]		                          #
+#  Required files to run: dl_networks_04 [folder]		                            #
 #                                                                                 #
-# Last Modified by: Mahmudulla Hassan on 03/14/2018                               #
+# Last Modified by: Mahmudulla Hassan on 03/27/2018                               #
 ###################################################################################
 
 
@@ -136,7 +131,7 @@ class ffnet:
 def dl_nets(nb_nets):
     """ Yields new set of deep learning based networks """
     # Read the networks
-    directory = 'dl_networks_05/'
+    directory = 'dl_networks_04/'
     with open(directory + 'sorted_models.pickle', 'rb') as f:
         model_files = pickle.load(f)
     with open(directory + 'sorted_weights.pickle', 'rb') as f:
@@ -2277,7 +2272,7 @@ def calculate_score(lig, rec, cmd_params, actual_filename_if_lig_is_list="", act
         total = 0.0
         #nets = networks()
         nets = []
-        with open("dl_networks_05/networks.pickle", "rb") as pickle_file:
+        with open("dl_networks_04/networks.pickle", "rb") as pickle_file:
                 nets = pickle.load(pickle_file)        
         
         output_dict = {}
@@ -2307,7 +2302,7 @@ def calculate_score(lig, rec, cmd_params, actual_filename_if_lig_is_list="", act
                                 
                 # Data processing
                 input_data = np.array(d.input_vector)
-                with open("dl_networks_05/transform.pickle", "rb") as f:
+                with open("dl_networks_04/transform.pickle", "rb") as f:
                     transform = pickle.load(f)
                 
                 input_data = (input_data - transform['mean'])/ transform['std']
@@ -2421,7 +2416,6 @@ print ("========================================================================
 
 best_network_scores = []
 for t in range(20):
-#for t in range(21):
     net_scores = []
     for score in scores:
         net_scores.append((score[4][t],score[5]))
@@ -2480,8 +2474,8 @@ for best_network_score in best_network_scores:
     
 print ("")
 
-print (textwrap.fill("When the poses were ranked by the best of the 21 network scores associated with each pose, the best-scoring pose was " + best_best_score[5] + " (Score = " + str(np.round(best_best_score[2],3)) + " = " + score_to_kd(best_best_score[2]).replace("Kd = ","") + ")"))
+print (textwrap.fill("When the poses were ranked by the best of the 20 network scores associated with each pose, the best-scoring pose was " + best_best_score[5] + " (Score = " + str(np.round(best_best_score[2],3)) + " = " + score_to_kd(best_best_score[2]).replace("Kd = ","") + ")"))
 print ("")
-print (textwrap.fill("When the poses were ranked by the average of the 21 network scores associated with each pose, the best-scoring pose was " + best_of_average_scores[5] + " (Score = " + str(np.round(best_of_average_scores[0],3)) + " +/- " + str(np.round(best_of_average_scores[1],3)) + " = " + score_to_kd(best_of_average_scores[0]).replace("Kd = ","") + "). This is the recommended ranking/scoring metric."))
+print (textwrap.fill("When the poses were ranked by the average of the 20 network scores associated with each pose, the best-scoring pose was " + best_of_average_scores[5] + " (Score = " + str(np.round(best_of_average_scores[0],3)) + " +/- " + str(np.round(best_of_average_scores[1],3)) + " = " + score_to_kd(best_of_average_scores[0]).replace("Kd = ","") + "). This is the recommended ranking/scoring metric."))
 
 print ("")
