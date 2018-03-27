@@ -1,7 +1,6 @@
 ###################################################################################
-# This is a modified version of nnscore.py.  Contains a new set of neural         #
-# networks.                                                                       #
-# 																			      #
+# This is a modified version of nnscore.py.  Contains a new set of neural networks#
+#                                                                                 #
 # CHANGES:                                                                        #
 #   1. The method containing  weights of the neural networks is removed. Instead  #
 #     they are now saved into a pickle file (networks.pickle)                     #
@@ -10,10 +9,9 @@
 #     provided by the new network doesn't count towards the overall performance   #
 #     of nnscore.py                                                               #
 #                                                                                 #
-#  Necessary files to run: networks.pickle, transform.pickle, dl_networks 			 #
-#   (folder containing the models and the weights                     				 #
+#  Required files to run this program: dl_networks_02                             #
 #                                                                                 #
-# Last Modified by: Mahmudulla Hassan on 02/18/2018                               #
+# Last Modified by: Mahmudulla Hassan on 03/27/2018                               #
 ###################################################################################
 
 
@@ -154,8 +152,8 @@ class ffnet:
 def dl_nets():
     """ Yields new set of deep learning based networks """
     # Read the networks
-    networks = sorted(glob.glob("dl_networks/*.json"))
-    weights = sorted(glob.glob("dl_networks/*.h5"))
+    networks = sorted(glob.glob("dl_networks_02/*.json"))
+    weights = sorted(glob.glob("dl_networks_02/*.h5"))
     
     for net, weight in zip(networks, weights):
         # Load the network
@@ -2289,7 +2287,7 @@ def calculate_score(lig, rec, cmd_params, actual_filename_if_lig_is_list="", act
         total = 0.0
         #nets = networks()
         nets = []
-        with open("networks.pickle", "rb") as pickle_file:
+        with open("dl_networks_02/networks.pickle", "rb") as pickle_file:
                 nets = pickle.load(pickle_file)        
         
         output_dict = {}
@@ -2319,7 +2317,7 @@ def calculate_score(lig, rec, cmd_params, actual_filename_if_lig_is_list="", act
                                 
                 # Data processing
                 input_data = np.array(d.input_vector)
-                with open("transform.pickle", "rb") as f:
+                with open("dl_networks_02/transform.pickle", "rb") as f:
                     transform = pickle.load(f)
                 input_data = (input_data - transform['mean'])/ transform['std']
                 
