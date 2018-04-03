@@ -3,6 +3,7 @@
 #                                                                     #
 # First version of DLSCORE                                            #
 # Required files/folders: dl_networks_04                              #
+# Required deep learning libraries: Tensorflow and Keras              #
 #                                                                     # 
 # Output: A list of dictionaries                                      #
 #                                                                     # 
@@ -2349,13 +2350,16 @@ if __name__ == "__main__":
     receptor = ''
     vina_executable = ''
     nb_nets = 0
-    
-    assert len(parameters) == 8, 'Not enough parameters'
+
+    if len(parameters) != 8:
+        print('  ERROR: Not enough parameters')
+        print('  USAGE: python dlscore.py -l <ligand_file> -r <receptor_file> -v <vina_executable> -n <number of dlscore networks to use>')
+        sys.exit(0)
+    #assert len(parameters) == 8, 'Not enough parameters'
     
     for i in range(len(parameters)):
         if parameters[i][0] == '-':
             p = parameters[i].replace('-', '').lower()
-            
             if p == 'l':
                 ligand = parameters[i+1]
             if p == 'r':
