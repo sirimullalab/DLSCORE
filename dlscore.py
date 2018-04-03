@@ -3,13 +3,19 @@
 #                                                                     #
 # First version of DLSCORE                                            #
 # Required files/folders: dl_networks_04                              #
+#                                                                     # 
 # Output: A list of dictionaries                                      #
-# Example run:                                                        #
+#                                                                     # 
+# To run in Terminal:                                                 #
+#  python dlscore.py -l <ligand_file> -r <receptor_file>              #
+#    -v <vina_executable> -n <number of networks to use>              #
+#                                                                     #
+# To run within a script:                                             #
 #  from dlscore import *                                              #
 #  ds = dlscore(ligand='../DLSCORE/samples/10gs/10gs_ligand.pdbqt',   # 
 #       receptor='../DLSCORE/samples/10gs/10gs_protein.pdbqt',        #
 #       vina_executable='/opt/autodock_vina_1_1_2_linux_x86/bin/vina',# 
-#       b_nets = 2)                                                   #
+#       nb_nets = 2)                                                  #
 #  output = ds.get_output()                                           #
 #                                                                     #
 # Author: Mahmudulla Hassan                                           #
