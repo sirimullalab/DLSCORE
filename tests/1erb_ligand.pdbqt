@@ -1,0 +1,52 @@
+REMARK  7 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: C6_6  and  C7_7 
+REMARK    2  A    between atoms: C8_8  and  C9_9 
+REMARK    3  A    between atoms: C10_10  and  C11_11 
+REMARK    4  A    between atoms: C11_11  and  C12_12 
+REMARK    5  A    between atoms: C13_13  and  C14_14 
+REMARK    6  A    between atoms: C14_14  and  C15_15 
+REMARK       I    between atoms: C15_15  and  N_17 
+REMARK    7  A    between atoms: N_17  and  C21_23 
+ROOT
+ATOM      1  C9  ETR d          31.672  19.186  49.163  0.00  0.00    -0.062 C 
+ATOM      2  C10 ETR d          32.977  19.130  49.511  0.00  0.00     0.007 C 
+ATOM      3  C19 ETR d          30.305  18.937  49.790  0.00  0.00     0.048 C 
+ENDROOT
+BRANCH   1   4
+ATOM      4  C8  ETR d          31.613  19.515  47.741  0.00  0.00     0.007 C 
+ATOM      5  C7  ETR d          30.343  19.508  47.255  0.00  0.00     0.009 C 
+BRANCH   5   6
+ATOM      6  C6  ETR d          30.262  20.088  45.910  0.00  0.00    -0.048 C 
+ATOM      7  C1  ETR d          30.035  21.496  45.351  0.00  0.00    -0.020 C 
+ATOM      8  C17 ETR d          30.783  22.787  45.675  0.00  0.00     0.020 C 
+ATOM      9  C16 ETR d          28.599  21.606  45.810  0.00  0.00     0.020 C 
+ATOM     10  C2  ETR d          29.536  21.549  43.900  0.00  0.00     0.014 C 
+ATOM     11  C3  ETR d          30.000  20.384  43.034  0.00  0.00     0.005 C 
+ATOM     12  C4  ETR d          31.268  19.784  43.606  0.00  0.00     0.034 C 
+ATOM     13  C5  ETR d          30.970  19.316  45.028  0.00  0.00    -0.077 C 
+ATOM     14  C18 ETR d          31.560  17.933  45.219  0.00  0.00     0.044 C 
+ENDBRANCH   5   6
+ENDBRANCH   1   4
+BRANCH   2  15
+ATOM     15  C11 ETR d          33.079  18.947  50.923  0.00  0.00     0.001 C 
+BRANCH  15  16
+ATOM     16  C12 ETR d          34.498  18.831  51.183  0.00  0.00     0.007 C 
+ATOM     17  C13 ETR d          35.044  18.647  52.465  0.00  0.00    -0.058 C 
+ATOM     18  C20 ETR d          34.083  18.764  53.524  0.00  0.00     0.048 C 
+BRANCH  17  19
+ATOM     19  C14 ETR d          36.171  18.487  52.617  0.00  0.00     0.065 C 
+BRANCH  19  20
+ATOM     20  C15 ETR d          36.572  18.285  53.997  0.00  0.00     0.175 C 
+ATOM     21  N   ETR d          37.627  17.991  54.130  0.00  0.00    -0.369 N 
+ATOM     22  H13 ETR d          38.353  18.517  53.687  0.00  0.00     0.161 HD
+ATOM     23  O   ETR d          35.607  18.350  54.985  0.00  0.00    -0.172 OA
+BRANCH  21  24
+ATOM     24  C21 ETR d          37.990  16.739  55.020  0.00  0.00     0.117 C 
+ATOM     25  C22 ETR d          38.352  17.481  56.265  0.00  0.00     0.026 C 
+ENDBRANCH  21  24
+ENDBRANCH  19  20
+ENDBRANCH  17  19
+ENDBRANCH  15  16
+ENDBRANCH   2  15
+TORSDOF 7
