@@ -1,7 +1,13 @@
 # DLSCORE: A deep learning based scoring function for predicting protein-ligand binding affinity.
 
-DLSCORE is an ensemble of neural networks, trained on the recent release of PDBBind data(v2016) using BINding ANAlyzer (BINANA ) descriptors. The dataset has 4085 samples divided into training (80%), test (10%) and validation set (10%).  DLSCORE acheived R2 of 0.95 for our training set and 0.82 for our test set
+Purpose: The main purpose of DLSCORE is to accurately predict binding affinities between a protein (target) and a ligand. 
+
+DLSCORE is an ensemble of neural networks, trained on the recent release of the refined PDBBind data(v2016) using BINding ANAlyzer (BINANA ) descriptors. The dataset was divided into training and cross-validation with a total of 2,792 protein-ligand complexes, while the testing stage was performed with a total of 300.  
+
+DLSCORE obtained a Pearson R2 of 0.95 for our training set and 0.82 for the testing stage.
  
+
+
 
 <b>Requirements:</b> <br>
 python 3.5 <br>
