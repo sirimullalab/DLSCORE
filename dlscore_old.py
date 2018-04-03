@@ -146,5 +146,3 @@ for rep in range(repetitions):
     print("Best Pearson correlation so far:", max_corr)
     print("Best parameters:",pars)
 
-
-
