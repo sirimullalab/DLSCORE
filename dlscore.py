@@ -1,3 +1,24 @@
+#######################################################################
+# DLSCORE.py                                                          #
+#                                                                     #
+# First version of DLSCORE                                            #
+# Required files/folders: dl_networks_04                              #
+# Output: A list of dictionaries                                      #
+# Example run:                                                        #
+#  from dlscore import *                                              #
+#  ds = dlscore(ligand='../DLSCORE/samples/10gs/10gs_ligand.pdbqt',   # 
+#       receptor='../DLSCORE/samples/10gs/10gs_protein.pdbqt',        #
+#       vina_executable='/opt/autodock_vina_1_1_2_linux_x86/bin/vina',# 
+#       b_nets = 2)                                                   #
+#  output = ds.get_output()                                           #
+#                                                                     #
+# Author: Mahmudulla Hassan                                           #
+# Department of Computer Science and School of Pharmacy               #
+# The University of Texas at El Paso, TX, USA                         #
+# Last modified: 04/03/2018                                           #
+#                                                                     #
+#######################################################################
+
 import numpy as np
 import textwrap
 import math
