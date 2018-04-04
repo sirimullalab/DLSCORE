@@ -20,10 +20,12 @@ We recommend to use the proteins and ligands (found in a pdbqt format) from [tes
 `python dlscore.py -r receptor1/receptor1.pdbqt -l ligand1/ligand1.pdbqt -v path/to/vina -n 10`
 
 Where:
-`-r stands for the receptor or protein (MUST BE in a pdbqt format)`
-`-l stands for the ligand (MUST BE in a pdbqt format)`
-`-v is the path to Autodock Vina`
-`-n is the desired number of networks`
+````
+-r stands for the receptor or protein (MUST BE in a pdbqt format)
+-l stands for the ligand (MUST BE in a pdbqt format)
+-v is the path to Autodock Vina
+-n is the desired number of networks
+````
 
 We recommend setting `-n` to 10, as it has been shown to give the optimum results (highest Pearson, Spearman and Kendall correlation coefficients, and lowest RMSE and MAE values).
 
