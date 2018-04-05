@@ -9,9 +9,7 @@ DLSCORE is an ensemble of neural networks, trained on the recent release of the 
 
 At the end, your folder should look like this:
 
-<p align="center">
-  <img src="/Users/Danniel/Desktop/git" width="350"/>
-</p>
+![Screenshot](git.png)
 
 ## Installing
 
