@@ -10,13 +10,13 @@ DLSCORE is an ensemble of neural networks, trained on the recent release of the 
 If you have all the prerequisites, you can move on to the testing stage. For the sake of simplicity, we included 5 folders with a protein and ligand each (in a .pdbqt format). Make sure you have a folder containing the following files/directories:
 
 - dlscore.py
-- dl_networks_04
-- autodock_vina_1_1_2_linux_x86
-- 1gvx 
-- 1erb
-- 3i4y
-- 2bfq
-- 3qdd
+- dl_networks_04/
+- autodock_vina_1_1_2_linux_x86/
+- 1gvx/ 
+- 1erb/
+- 3i4y/
+- 2bfq/
+- 3qdd/
 
 
 At the end, your folder should look like this:
@@ -47,7 +47,7 @@ We recommend setting `-n` to 10, as it has been shown to give the optimum result
 The command to run DLSCORE should look this:
 
 `
-python dlscore.py -r 1erb/1erb_protein.pdbqt -l 1erb/1erb_ligand.pdbqt -v autodock_vina_1_1_2_linux_x86/bin/vina -n 10
+python dlscore.py -r 1erb/1erb_protein.pdbqt -l 1erb/1erb_ligand.pdbqt -v autodock_vina_1_1_2_linux_x86/bin/vina -n <number_of_networks>
 `
 
 And the output (with some parameter and warning messages displayed) should be:
@@ -56,7 +56,7 @@ And the output (with some parameter and warning messages displayed) should be:
 [{'dlscore': [7.0548329, 6.6804061, 7.331718, 7.5543647, 7.4937844, 7.2915564, 6.8153844, 7.3344746, 6.8370795, 6.8463974], 'nnscore': [7.528647808595601, 6.841528068839551, 8.970434997068462, 8.652536458379778, 7.5314641378295235, 6.567334597110879, 8.493516759548358, 7.6294518800050355, 6.909480876402764, 8.603892203786629, 10.735374727080952, 7.269388390573901, 8.861930933915144, 6.566368370705019, 6.649809561604744, 6.611589875000943, 5.496196964085726, 7.70903543971305, 6.70953530232466, 7.821874753600213], 'pdb_id': '1erb', 'vina_output': [-8.31353, 56.54909, 1495.07589, 0.50669, 68.97156, 0.0]}]
 `
 
-DLSCORE will be producing the number of networks specified with in `-n`, NNScore 2.0 will display 20, and vina 6. The output thrown by DLSCORE and NNScore 2.0 are pKd values, while Vina gives delta G (kcal/mol)
+DLSCORE will be producing the number of networks specified with in `-n`, NNScore 2.0 will display 20, and vina 1 (plus 5 . The output thrown by DLSCORE and NNScore 2.0 are pKd values, while Vina gives delta G (kcal/mol)
 
 The same applies for the rest of the proteins and ligands. To see the rest of the protein-ligand complexes for our dataset (300 from PDBbind v.2016 refined-set), please read our [research article](www.includelink.com)
 
@@ -68,7 +68,7 @@ If you wish to contribute, submit pull requests or read more about our code of c
 
 ## Authors
 
-Mahmudulla Hassan , Dr. Olac Fuentes, Dr. Suman Sirimulla.
+Mahmudulla Hassan , Dr. Olac Fuentes, Dr. Suman Sirimulla, Daniel Castaneda Mogollon, Ricardo Avila.
 
 See also the list of [contributors](https://github.com/sirimullalab/DLSCORE/blob/master/contributors) who made this project possible.
 
