@@ -5,11 +5,13 @@ Purpose: The main purpose of DLSCORE is to accurately predict binding affinities
 DLSCORE is an ensemble of neural networks, trained on the recent release of the refined PDBBind data(v2016) using BINding ANAlyzer (BINANA ) descriptors. The dataset was divided into training and cross-validation with a total of 2,792 protein-ligand complexes, while the testing stage was performed with a total of 300.  
 
 
-
-DLSCORE obtained a Pearson R2 of 0.95 for our training set and 0.82 for the testing stage.
-
-
 ## Prerequisites
+
+At the end, your folder should look like this:
+
+<p align="center">
+  <img src="/Users/Danniel/Desktop/git" width="350"/>
+</p>
 
 ## Installing
 
