@@ -33,6 +33,8 @@ We recommend setting `-n` to 10, as it has been shown to give the optimum result
 
 ## Contributing
 
+[contributing]
+
 ## Authors
 Mahmudulla Hassan
 Olac Fuentes
