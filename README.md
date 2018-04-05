@@ -7,6 +7,17 @@ DLSCORE is an ensemble of neural networks, trained on the recent release of the 
 
 ## Prerequisites
 
+If you have all the prerequisites, make sure you have a folder containing the following files/directories:
+*dlscore.py
+*dl_networks_04
+*1gvx
+*1erb
+*3i4y
+*2bfq
+*3qdd
+*autodock_vina_1_1_2_linux_x86
+
+
 At the end, your folder should look like this:
 
 ![Screenshot](folder.png)
@@ -46,11 +57,10 @@ DLSCORE will be producing the number of networks specified with in `-n`, NNScore
 The same applies for the rest of the proteins and ligands. To see the rest of the protein-ligand complexes for our dataset (300 from PDBbind v.2016 refined-set), please read our [research article](www.includelink.com)
 
 
-## Built with
 
 ## Contributing
 
-[contributing]
+If you wish to contribute, submit pull requests or read more about our code of conduct, please read [CONTRIBUTING.md](https://github.com/sirimullalab/DLSCORE/blob/master/CONTRIBUTING.md)
 
 ## Authors
 
