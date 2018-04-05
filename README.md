@@ -53,7 +53,8 @@ The same applies for the rest of the proteins and ligands. To see the rest of th
 [contributing]
 
 ## Authors
-Mahmudulla Hassan
+
+Mahmudulla Hassan 
 Olac Fuentes
 Suman Sirimulla
 
