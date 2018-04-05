@@ -7,16 +7,16 @@ DLSCORE is an ensemble of neural networks, trained on the recent release of the 
 
 ## Prerequisites
 
-If you have all the prerequisites, make sure you have a folder containing the following files/directories:
+If you have all the prerequisites, you can move on to the testing stage. For the sake of simplicity, we included 5 folders with a protein and ligand each (in a .pdbqt format). Make sure you have a folder containing the following files/directories:
 
 - dlscore.py
-- dl_networks_04*
-- 1gvx
+- dl_networks_04
+- autodock_vina_1_1_2_linux_x86
+- 1gvx 
 - 1erb
 - 3i4y
 - 2bfq
 - 3qdd
-- autodock_vina_1_1_2_linux_x86*
 
 
 At the end, your folder should look like this:
