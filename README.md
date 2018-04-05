@@ -43,7 +43,7 @@ And the output (with some parameter and warning messages displayed) should be:
 
 DLSCORE will be producing the number of networks specified with in `-n`, NNScore 2.0 will display 20, and vina 6. The output thrown by DLSCORE and NNScore 2.0 are pKd values, while Vina gives delta G (kcal/mol)
 
-The same applies for the rest of the proteins and ligands. To see the rest of the protein-ligand complexes for our dataset (300 from PDBbind v.2016 refined-set), please take a look at [results].
+The same applies for the rest of the proteins and ligands. To see the rest of the protein-ligand complexes for our dataset (300 from PDBbind v.2016 refined-set), please read our [research article](www.includelink.com)
 
 
 ## Built with
@@ -54,9 +54,7 @@ The same applies for the rest of the proteins and ligands. To see the rest of th
 
 ## Authors
 
-Mahmudulla Hassan 
-Olac Fuentes
-Suman Sirimulla
+Mahmudulla Hassan , Dr. Olac Fuentes, Dr. Suman Sirimulla.
 
 See also the list of [contributors](https://github.com/sirimullalab/DLSCORE/blob/master/contributors) who made this project possible.
 
