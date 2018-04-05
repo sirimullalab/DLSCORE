@@ -25,6 +25,9 @@ At the end, your folder should look like this:
 
 ## Installing
 
+To install python 3.5, please visit this [link](https://www.python.org/downloads/) and follow the instructions.
+
+
 ## Running the tests
 
 We recommend to use the proteins and ligands (in a .pdbqt format) from [tests](https://github.com/sirimullalab/DLSCORE/tree/master/tests) to try DLSCORE. When running it, it should look like this:
