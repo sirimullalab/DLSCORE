@@ -9,14 +9,14 @@
 #                                                                     # 
 # To run in Terminal:                                                 #
 #  python dlscore.py -l <ligand_file> -r <receptor_file>              #
-#    -v <vina_executable> -n <number of networks to use>              #
+#    -v <vina_executable> -n <number of networks to use (Optional)>   #
 #                                                                     #
 # To run within a script:                                             #
 #  from dlscore import *                                              #
 #  ds = dlscore(ligand='ligand_file.pdbqt',                           #
 #       receptor='protein_file.pdbqt',                                #
 #       vina_executable='/bin/vina',                                  #
-#       nb_nets = 2)                                                  #
+#       nb_nets = 2 (Optional. Default value is 10))                  #
 #  output = ds.get_output()                                           #
 #                                                                     #
 # Author: Mahmudulla Hassan                                           #
@@ -1908,6 +1908,7 @@ class binana:
 
         # Now get vina
         vina_output = getCommandOutput2(parameters.params['vina_executable'] + ' --score_only --receptor ' + receptor_pdbqt_filename + ' --ligand ' + ligand_pdbqt_filename)
+        #vina_output = getCommandOutput2('vina --score_only --receptor ' + receptor_pdbqt_filename + ' --ligand ' + ligand_pdbqt_filename)
 
         # if ligand_pdbqt_filename was originally passed as a list instead of a filename, delete the temporary file that was created to accomodate vina
         #if "MODEL" in ligand_pdbqt_filename: 
@@ -2245,11 +2246,11 @@ def calculate_score(lig, rec, cmd_params, nb_nets, actual_filename_if_lig_is_lis
         
         output_dict = {}
         # Save the pdb id
-        f = re.findall('\w\w\w\w/', actual_filename_if_lig_is_list)
-        pdb_id = f[len(f)-1].strip('/')
-        output_dict['pdb_id'] = pdb_id
+        #f = re.findall('\w\w\w\w/', actual_filename_if_lig_is_list)
+        #pdb_id = f[len(f)-1].strip('/')
+        #output_dict['pdb_id'] = pdb_id
         # Add vina output 
-        output_dict['vina_output'] = d.input_vector[:6]
+        output_dict['vina_output'] = d.input_vector[0]
         nnscores = []
         dlscores = []
         for net_array in nets:
@@ -2303,9 +2304,9 @@ class dlscore():
     ligand = ''
     receptor = ''
     vina_executable = ''
-    nb_nets = ''
+    nb_nets = 10
     
-    def __init__(self, ligand, receptor, vina_executable, nb_nets):
+    def __init__(self, ligand, receptor, vina_executable, nb_nets=10):
         self.ligand = ligand
         self.receptor = receptor
         self.vina_executable = vina_executable
@@ -2321,14 +2322,14 @@ class dlscore():
         if l_file_ext == '.pdb' or l_file_ext == '.mol2':
             # Convert files
             out_file = l_filename + '.pdbqt'
-            cmd = "mgltools/pythonsh mgltools/prepare_ligand4.py -l " + self.ligand + " -o " + out_file
+            cmd = "pythonsh mgltools/prepare_ligand4.py -l " + self.ligand + " -o " + out_file
             os.system(cmd)
             self.ligand = out_file
 
         if r_file_ext == '.pdb' or r_file_ext == '.mol2':
             # Convert files
             out_file = r_filename +'.pdbqt'
-            cmd = "mgltools/pythonsh mgltools/prepare_receptor4.py -U  nphs_lps_waters -r " + \
+            cmd = "pythonsh mgltools/prepare_receptor4.py -U  nphs_lps_waters -r " + \
                   self.receptor + " -o " + out_file
             os.system(cmd)
             self.receptor = out_file
@@ -2370,13 +2371,14 @@ class dlscore():
                     temp_f.close()
                     model_name = "MODEL " + str(model_id)
                     score=calculate_score(lig_array, receptor, input_parameters, self.nb_nets, temp_filename, rec, "\t")
+                    score['dlscore'] = sum(score['dlscore']) / len(score['dlscore'])
+                    score['nnscore'] = sum(score['nnscore']) / len(score['nnscore'])
                     scores.append(score)
                     os.remove(temp_filename)
                     lig_array = []
                     model_id = model_id + 1
 
         f.close()
-        
         return scores
 
 
@@ -2385,12 +2387,12 @@ if __name__ == "__main__":
     ligand = ''
     receptor = ''
     vina_executable = ''
-    nb_nets = 0
+    nb_nets = 10
 
-    if len(parameters) != 8:
-        print('  ERROR: Not enough parameters')
-        print('  USAGE: python dlscore.py -l <ligand_file> -r <receptor_file> -v <vina_executable> -n <number of dlscore networks to use>')
-        sys.exit(0)
+#    if len(parameters) != 8:
+#        print('  ERROR: Not enough parameters')
+#        print('  USAGE: python dlscore.py -l <ligand_file> -r <receptor_file> -v <vina_executable> -n <number of dlscore networks to use>')
+#        sys.exit(0)
     #assert len(parameters) == 8, 'Not enough parameters'
     
     for i in range(len(parameters)):
@@ -2406,6 +2408,5 @@ if __name__ == "__main__":
                 nb_nets = int(parameters[i+1])
     
     ds = dlscore(ligand, receptor, vina_executable, nb_nets)
-    
     print("DLSCORE OUTPUT")
     print(ds.get_output())
