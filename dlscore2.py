@@ -8,8 +8,12 @@
 # Output: A list of dictionaries                                      #
 #                                                                     # 
 # To run in Terminal:                                                 #
-#  python dlscore.py -l <ligand_file> -r <receptor_file>              #
-#    -v <vina_executable> -n <number of networks to use (Optional)>   #
+#  python dlscore.py [OPTIONS]                                        #
+#    Options: -l <ligand file>                                        #
+#             -r <receptor file>                                      #
+#             -n <number of networks> (default: 10)                   #
+#             -v <vina executable path>                               #
+#             -o <output file (csv format)>                           #
 #                                                                     #
 # To run within a script:                                             #
 #  from dlscore import *                                              #
@@ -2388,6 +2392,7 @@ if __name__ == "__main__":
     receptor = ''
     vina_executable = ''
     nb_nets = 10
+    output_file = ''
 
 #    if len(parameters) != 8:
 #        print('  ERROR: Not enough parameters')
@@ -2406,7 +2411,18 @@ if __name__ == "__main__":
                 vina_executable = parameters[i+1]
             if p == 'n':
                 nb_nets = int(parameters[i+1])
+            if p == 'o':
+                output_file = parameters[i+1]
     
     ds = dlscore(ligand, receptor, vina_executable, nb_nets)
+    output = ds.get_output()
+    # Write the output file if requested
+    if output_file != '':
+        with open(output_file + '.csv', 'w') as f:
+            w = csv.DictWriter(f, fieldnames=["vina_output", "nnscore", "dlscore"])
+            w.writeheader()
+            for d in output:
+                w.writerow(d)
+            
     print("DLSCORE OUTPUT")
-    print(ds.get_output())
+    print(output)
