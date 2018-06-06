@@ -2,27 +2,24 @@
 # DLSCORE.py                                                          #
 #                                                                     #
 # First version of DLSCORE                                            #
-# Required files/folders: dl_networks_04                              #
 # Required deep learning libraries: Tensorflow and Keras              #
 #                                                                     # 
 # Output: A list of dictionaries                                      #
 #                                                                     # 
-# To run in Terminal:                                                 #
-#  python dlscore.py -l <ligand_file> -r <receptor_file>              #
-#    -v <vina_executable> -n <number of networks to use>              #
+# To run in a terminal, type "python dlscore.py -h" for options.      #
 #                                                                     #
 # To run within a script:                                             #
 #  from dlscore import *                                              #
-#  ds = dlscore(ligand='../DLSCORE/samples/10gs/10gs_ligand.pdbqt',   # 
-#       receptor='../DLSCORE/samples/10gs/10gs_protein.pdbqt',        #
-#       vina_executable='/opt/autodock_vina_1_1_2_linux_x86/bin/vina',# 
-#       nb_nets = 2)                                                  #
+#  ds = dlscore(ligand='ligand_file.pdbqt',                           #
+#       receptor='protein_file.pdbqt',                                #
+#       vina_executable='vina exectuable file'                        #
+#       nb_nets = 2 (Optional. Default value is 10))                  #
 #  output = ds.get_output()                                           #
 #                                                                     #
 # Author: Mahmudulla Hassan                                           #
 # Department of Computer Science and School of Pharmacy               #
 # The University of Texas at El Paso, TX, USA                         #
-# Last modified: 04/03/2018                                           #
+# Last modified: 06/06/2018                                           #
 #                                                                     #
 #######################################################################
 
@@ -45,6 +42,12 @@ import h5py
 
 # ignore warning from tensorflow
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
+
+# Get the directories
+current_dir = os.path.dirname(os.path.realpath(__file__))
+networks_dir = os.path.join(current_dir, "networks/refined")
+mgltools_dir = os.path.join(current_dir, "mgltools")
+verbose = False
 
 # The ffnet class was derived from the ffnet python package developed by Marek Wojciechowski (http://ffnet.sourceforge.net/).
 # As Mr. Wojciechowski's program was released under the GPL license, NNScore is likewise GPL licensed.
@@ -127,13 +130,13 @@ class ffnet:
         for k in range(1,len(self.outno)+1):
             self.output[k] = self.deo[k][1] * self.units[self.outno[k]] + self.deo[k][2]
 
+
 def dl_nets(nb_nets):
-    """ Yields new set of deep learning based networks """
+    """ Yields feed forward nerual nets from the network directory """
     # Read the networks
-    directory = 'dl_networks_04/'
-    with open(directory + 'sorted_models.pickle', 'rb') as f:
+    with open(os.path.join(networks_dir, "sorted_models.pickle"), 'rb') as f:
         model_files = pickle.load(f)
-    with open(directory + 'sorted_weights.pickle', 'rb') as f:
+    with open(os.path.join(networks_dir, "sorted_weights.pickle"), 'rb') as f:
         weight_files = pickle.load(f)
     
     assert(len(model_files) == len(weight_files)),         'Number of model files and the weight files are not the same.'
@@ -141,11 +144,11 @@ def dl_nets(nb_nets):
         if i==nb_nets:
             break
         # Load the network
-        with open(directory + model, 'r') as json_file:
+        with open(os.path.join(networks_dir, model), 'r') as json_file:
             loaded_model = model_from_json(json_file.read())
             
         # Load the weights
-        loaded_model.load_weights(directory + weight)
+        loaded_model.load_weights(os.path.join(networks_dir, weight))
         
         # Compile the network
         #loaded_model.compile(
@@ -155,15 +158,6 @@ def dl_nets(nb_nets):
         
         yield loaded_model
 
-def sensoring(test_x, train_y, pred):
-   """ Sensor the predicted data to get rid of outliers """
-   mn = np.min(train_y)
-   mx = np.max(train_y)
-
-   pred = np.minimum(pred, mx)
-   pred = np.maximum(pred, mn)
-    
-   return pred
 
 class point:
     x=99999.0
@@ -1908,6 +1902,7 @@ class binana:
 
         # Now get vina
         vina_output = getCommandOutput2(parameters.params['vina_executable'] + ' --score_only --receptor ' + receptor_pdbqt_filename + ' --ligand ' + ligand_pdbqt_filename)
+        #vina_output = getCommandOutput2('vina --score_only --receptor ' + receptor_pdbqt_filename + ' --ligand ' + ligand_pdbqt_filename)
 
         # if ligand_pdbqt_filename was originally passed as a list instead of a filename, delete the temporary file that was created to accomodate vina
         #if "MODEL" in ligand_pdbqt_filename: 
@@ -2240,16 +2235,23 @@ def calculate_score(lig, rec, cmd_params, nb_nets, actual_filename_if_lig_is_lis
         scores = []
         total = 0.0
         nets = []
-        with open("dl_networks_04/networks.pickle", "rb") as pickle_file:
-                nets = pickle.load(pickle_file)        
+        #with open(os.path.join(networks_dir, "networks.pickle"), "rb") as pickle_file:
+        #        nets = pickle.load(pickle_file) 
+        
+        try:      
+            with open(os.path.join(networks_dir, "networks.pickle"), "rb") as f:
+                nets = pickle.load(f)
+        except IOError:
+            print("ERROR: 'Networks.pickle' FILE NOT FOUND")
+            sys.exit(1)
         
         output_dict = {}
         # Save the pdb id
-        f = re.findall('\w\w\w\w/', actual_filename_if_lig_is_list)
-        pdb_id = f[len(f)-1].strip('/')
-        output_dict['pdb_id'] = pdb_id
+        #f = re.findall('\w\w\w\w/', actual_filename_if_lig_is_list)
+        #pdb_id = f[len(f)-1].strip('/')
+        #output_dict['pdb_id'] = pdb_id
         # Add vina output 
-        output_dict['vina_output'] = d.input_vector[:6]
+        output_dict['vina_output'] = d.input_vector[0]
         nnscores = []
         dlscores = []
         for net_array in nets:
@@ -2261,33 +2263,39 @@ def calculate_score(lig, rec, cmd_params, nb_nets, actual_filename_if_lig_is_lis
                 except OverflowError:
                     print (line_header + "The output of network #" + str(len(scores) + 1) + " could not be determined because of an overflow error!")
 
+        #try:
+        # Session and memory management (Requires for GPU instance of tensorflow)
+        #config = K.tf.ConfigProto()
+        #config.gpu_options.allow_growth = True
+        #config.gpu_options.visible_device_list = "0"
+        #K.set_session(K.tf.Session(config=config))
+                        
+        # Data processing
+        input_data = np.array(d.input_vector)
+        
         try:
-                # Session and memory management
-                config = K.tf.ConfigProto()
-                config.gpu_options.allow_growth = True
-                #config.gpu_options.visible_device_list = "0"
-                K.set_session(K.tf.Session(config=config))
-                                
-                # Data processing
-                input_data = np.array(d.input_vector)
-                with open("dl_networks_04/transform.pickle", "rb") as f:
-                    transform = pickle.load(f)
-                
-                input_data = (input_data - transform['mean'])/ transform['std']
-                
-                # Load the neural networks
-                count = 1
-                #nb_nets = 10
-                for dl_net in dl_nets(nb_nets):
-                    val = dl_net.predict(input_data.reshape(1, -1))[0][0]
-                    dlscores.append(val)
-                    count = count + 1
-                    # Delete the model and clear the session. 
-                    del dl_net
-                    K.clear_session()               
-                
+            with open(os.path.join(networks_dir, "transform.pickle"), "rb") as f:
+                transform = pickle.load(f)
         except IOError:
-                print("Could not load the network file")		
+            print("ERROR: 'transform.pickle' FILE NOT FOUND")
+            sys.exit(1)
+                
+        input_data = (input_data - transform['mean'])/ (transform['std'] + 0.0001)
+                
+        # Load the neural networks
+        count = 1
+        #nb_nets = 10
+        for dl_net in dl_nets(nb_nets):
+            val = dl_net.predict(input_data.reshape(1, -1))[0][0]
+            dlscores.append(val)
+            count = count + 1
+            # Delete the model and clear the session. 
+            del dl_net
+            K.clear_session()               
+                
+        #except IOError:
+        #        print("Could not load the network file")
+        #        sys.exit(1)	
         
         if (len(nnscores) > 0):
             output_dict['nnscore'] = nnscores
@@ -2300,15 +2308,78 @@ def calculate_score(lig, rec, cmd_params, nb_nets, actual_filename_if_lig_is_lis
 
 class dlscore():
     parameters = []
-    nb_nets = []
+    ligand = ''
+    receptor = ''
+    vina_executable = ''
+    nb_nets = 10
     
-    def __init__(self, ligand, receptor, vina_executable, nb_nets):
-        self.parameters = ['-ligand', ligand,
-                      '-receptor', receptor,
-                      '-vina_executable', vina_executable]
+    def __init__(self, ligand, receptor, vina_executable, nb_nets=10):
+        self.ligand = ligand
+        self.receptor = receptor
+        self.vina_executable = vina_executable
         self.nb_nets = nb_nets
+    
+    def which(program):
+        """ Find and return the path of the specified program."""
+        def is_exe(fpath):
+            return os.path.isfile(fpath) and os.access(fpath, os.X_OK)
+
+        fpath, fname = os.path.split(program)
+        if fpath:
+            if is_exe(program):
+                return program
+        else:
+            for path in os.environ["PATH"].split(os.pathsep):
+                exe_file = os.path.join(path, program)
+                if is_exe(exe_file):
+                    return exe_file
+
+        return None
+        
+    def check_inputs(self):
+        """
+        Checks the input files. Convert mol2 and pdb files into pdbqt files if necessary.
+        :return: New files with pdbqt extension.
+        """
+        l_filename, l_file_ext = os.path.splitext(self.ligand)
+        r_filename, r_file_ext = os.path.splitext(self.receptor)
+        if l_file_ext == '.pdb' or l_file_ext == '.mol2':
+            # Check if pythonsh is available or not
+            pythonsh = which("pythonsh")
+            if pythonsh == None:
+                print("ERROR: pythonsh commmand not found. Please install mgltools and define pythonsh in the ~/.bashrc")
+            
+            # Convert files
+            out_file = l_filename + '.pdbqt'
+            cmd = "pythonsh " + os.path.join(mgltools_dir, "prepare_ligand4.py") + " -l " + self.ligand + " -o " + out_file
+            os.system(cmd)
+            self.ligand = out_file
+
+        if r_file_ext == '.pdb' or r_file_ext == '.mol2':
+            # Check if pythonsh is available or not
+            pythonsh = which("pythonsh")
+            if pythonsh == None:
+                print("ERROR: pythonsh commmand not found. Please install mgltools and define pythonsh in the ~/.bashrc")
+            
+            # Convert files
+            out_file = r_filename +'.pdbqt'
+            cmd = "pythonsh " + os.path.join(mgltools_dir, "prepare_receptor4.py") + " -U  nphs_lps_waters -r " + \
+                  self.receptor + " -o " + out_file
+            os.system(cmd)
+            self.receptor = out_file
+
 
     def get_output(self):
+        """
+        Program output
+        :return: A list of dictionaries for each of the ligand files
+        """
+        # Checking the input file format
+        self.check_inputs()
+        self.parameters = ['-ligand', self.ligand,
+                           '-receptor', self.receptor,
+                           '-vina_executable', self.vina_executable]
+
         input_parameters = command_line_parameters(self.parameters)
         if input_parameters.okay_to_proceed() == False:
             return {}
@@ -2334,42 +2405,73 @@ class dlscore():
                     temp_f.close()
                     model_name = "MODEL " + str(model_id)
                     score=calculate_score(lig_array, receptor, input_parameters, self.nb_nets, temp_filename, rec, "\t")
+                    score['dlscore'] = sum(score['dlscore']) / len(score['dlscore'])
+                    score['nnscore'] = sum(score['nnscore']) / len(score['nnscore'])
                     scores.append(score)
                     os.remove(temp_filename)
                     lig_array = []
                     model_id = model_id + 1
 
         f.close()
-        
         return scores
 
 
 if __name__ == "__main__":
-    parameters = sys.argv[1:]
-    ligand = ''
-    receptor = ''
-    vina_executable = ''
-    nb_nets = 0
+    import argparse
+    parser = argparse.ArgumentParser(description="Main script for running DLSCORE")
+    parser.add_argument('--ligand', action='store', dest='ligand', required=True,
+                        help='Ligand file. Supported file types: .pdb, .pdbqt, .mol2')
+    parser.add_argument('--receptor', action='store', dest='receptor', required=True,
+                        help='Receptor file. Supported file types: .pdb, .pdbqt, .mol2')
+    parser.add_argument('--vina_executable', action='store', dest='vina_executable',
+                        default='autodock_vina_1_1_2_linux_x86/bin/vina',
+                        help='File path for Vina executable.')
+    parser.add_argument('--num_networks', action='store', dest='num_networks', type=int,
+                        default=10,
+                        help='Number of networks to use for prediction. Default:10')
+    parser.add_argument('--output', action='store', dest='output_file',
+                        default='out',
+                        help='Name of the output file. Dafault: out.csv')
+    parser.add_argument('--network_type', action='store', dest='network_type',
+                        choices=['refined', 'general'],
+                        default='refined',
+                        help='DLSCORE has two types of weights trained on PDB-Bind 2016 refined set and general'\
+                        ' set (including refined). Any of these two variants can be used. Possible options are: '\
+                        'general and refined. Dafault is set to general.')
+    parser.add_argument('--verbose', action='store', dest='verbose', type=int,
+                        choices=[0, 1],
+                        default=0,
+                        help='Verbose mode. False if 0, True if 1. Default is set to False.')
+    
+    arg_dict = vars(parser.parse_args())
+    
+    # Get the arguments
+    ligand = arg_dict['ligand']
+    receptor = arg_dict['receptor']
+    vina_executable = arg_dict['vina_executable']
+    num_networks = arg_dict['num_networks']
+    output_file = arg_dict['output_file']
+    network_type = arg_dict['network_type']
+    verbose = True if arg_dict['verbose']==1 else False
+    
+    if network_type == 'general':
+        networks_dir = os.path.join(current_dir, "networks/general")
+    else:
+        networks_dir = os.path.join(current_dir, "networks/refined")
+    
+    # Get an instance of dlscore
+    ds = dlscore(ligand, receptor, vina_executable, num_networks)
+    
+    # Get the output
+    output = ds.get_output()
+    
+    # Write the output file if requested
+    if output_file != '':
+        with open(output_file + '.csv', 'w') as f:
+            w = csv.DictWriter(f, fieldnames=["vina_output", "nnscore", "dlscore"])
+            w.writeheader()
+            for d in output:
+                w.writerow(d)
 
-    if len(parameters) != 8:
-        print('  ERROR: Not enough parameters')
-        print('  USAGE: python dlscore.py -l <ligand_file> -r <receptor_file> -v <vina_executable> -n <number of dlscore networks to use>')
-        sys.exit(0)
-    #assert len(parameters) == 8, 'Not enough parameters'
+    if verbose: print("DLSCORE OUTPUT: " + str(output))
     
-    for i in range(len(parameters)):
-        if parameters[i][0] == '-':
-            p = parameters[i].replace('-', '').lower()
-            if p == 'l':
-                ligand = parameters[i+1]
-            if p == 'r':
-                receptor = parameters[i+1]
-            if p == 'v':
-                vina_executable = parameters[i+1]
-            if p == 'n':
-                nb_nets = int(parameters[i+1])
-    
-    ds = dlscore(ligand, receptor, vina_executable, nb_nets)
-    
-    print("DLSCORE OUTPUT")
-    print(ds.get_output())
