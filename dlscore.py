@@ -2319,7 +2319,7 @@ class dlscore():
         self.vina_executable = vina_executable
         self.nb_nets = nb_nets
     
-    def which(program):
+    def which(self, program):
         """ Find and return the path of the specified program."""
         def is_exe(fpath):
             return os.path.isfile(fpath) and os.access(fpath, os.X_OK)
@@ -2345,7 +2345,7 @@ class dlscore():
         r_filename, r_file_ext = os.path.splitext(self.receptor)
         if l_file_ext == '.pdb' or l_file_ext == '.mol2':
             # Check if pythonsh is available or not
-            pythonsh = which("pythonsh")
+            pythonsh = self.which("pythonsh")
             if pythonsh == None:
                 print("ERROR: pythonsh commmand not found. Please install mgltools and define pythonsh in the ~/.bashrc")
             
@@ -2357,7 +2357,7 @@ class dlscore():
 
         if r_file_ext == '.pdb' or r_file_ext == '.mol2':
             # Check if pythonsh is available or not
-            pythonsh = which("pythonsh")
+            pythonsh = self.which("pythonsh")
             if pythonsh == None:
                 print("ERROR: pythonsh commmand not found. Please install mgltools and define pythonsh in the ~/.bashrc")
             
