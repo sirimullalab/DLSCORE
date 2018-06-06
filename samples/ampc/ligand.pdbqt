@@ -1,0 +1,516 @@
+MODEL 1
+REMARK minimizedAffinity -6.36030579
+REMARK minimizedRMSD -1
+REMARK  5 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: C2_2  and  C10_14 
+REMARK    2  A    between atoms: C4_5  and  C6_8 
+REMARK    3  A    between atoms: C6_8  and  C7_9 
+REMARK    4  A    between atoms: C6_8  and  C9_12 
+REMARK    5  A    between atoms: C7_9  and  C8_10 
+ROOT
+ATOM      1  C1  <0> d   1      81.873   4.940  30.815  0.00  0.00     0.043 A 
+ATOM      2  C2  <0> d   1      80.781   4.778  31.653  0.00  0.00     0.067 A 
+ATOM      3  C3  <0> d   1      79.508   4.802  31.115  0.00  0.00     0.133 A 
+ATOM      4  N1  <0> d   1      79.326   4.982  29.821  0.00  0.00    -0.262 NA
+ATOM      5  C4  <0> d   1      80.339   5.135  28.993  0.00  0.00     0.070 A 
+ATOM      6  C5  <0> d   1      81.641   5.121  29.459  0.00  0.00     0.060 A 
+ATOM      7 Cl1  <0> d   1      82.970   5.330  28.361  0.00  0.00    -0.082 Cl
+ENDROOT
+BRANCH   5   8
+ATOM      8  C6  <0> d   1      80.076   5.331  27.522  0.00  0.00     0.150 C 
+BRANCH   8   9
+ATOM      9  C7  <0> d   1      79.717   3.988  26.884  0.00  0.00     0.135 C 
+BRANCH   9  10
+ATOM     10  C8  <0> d   1      80.276   3.930  25.486  0.00  0.00     0.173 C 
+ATOM     11  O1  <0> d   1      79.718   3.270  24.640  0.00  0.00    -0.648 OA
+ATOM     12  O3  <0> d   1      81.392   4.607  25.180  0.00  0.00    -0.648 OA
+ENDBRANCH   9  10
+ENDBRANCH   8   9
+BRANCH   8  13
+ATOM     13  C9  <0> d   1      78.931   6.295  27.340  0.00  0.00     0.183 C 
+ATOM     14  O2  <0> d   1      77.857   5.893  26.961  0.00  0.00    -0.647 OA
+ATOM     15  O4  <0> d   1      79.107   7.600  27.601  0.00  0.00    -0.647 OA
+ENDBRANCH   8  13
+ENDBRANCH   5   8
+BRANCH   2  16
+ATOM     16  C10 <0> d   1      80.979   4.578  33.134  0.00  0.00     0.418 C 
+ATOM     17  F1  <0> d   1      82.275   4.969  33.487  0.00  0.00    -0.166 F 
+ATOM     18  F2  <0> d   1      80.050   5.351  33.838  0.00  0.00    -0.166 F 
+ATOM     19  F3  <0> d   1      80.797   3.228  33.450  0.00  0.00    -0.166 F 
+ENDBRANCH   2  16
+TORSDOF 5
+ENDMDL
+MODEL 2
+REMARK minimizedAffinity -5.8688283
+REMARK minimizedRMSD -1
+REMARK  5 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: C2_2  and  C10_14 
+REMARK    2  A    between atoms: C4_5  and  C6_8 
+REMARK    3  A    between atoms: C6_8  and  C7_9 
+REMARK    4  A    between atoms: C6_8  and  C9_12 
+REMARK    5  A    between atoms: C7_9  and  C8_10 
+ROOT
+ATOM      1  C1  <0> d   1      79.675   5.070  31.796  0.00  0.00     0.043 A 
+ATOM      2  C2  <0> d   1      80.968   4.661  32.081  0.00  0.00     0.067 A 
+ATOM      3  C3  <0> d   1      81.932   4.736  31.094  0.00  0.00     0.133 A 
+ATOM      4  N1  <0> d   1      81.632   5.186  29.891  0.00  0.00    -0.262 NA
+ATOM      5  C4  <0> d   1      80.415   5.588  29.585  0.00  0.00     0.070 A 
+ATOM      6  C5  <0> d   1      79.399   5.543  30.521  0.00  0.00     0.060 A 
+ATOM      7 Cl1  <0> d   1      77.797   6.068  30.107  0.00  0.00    -0.082 Cl
+ENDROOT
+BRANCH   5   8
+ATOM      8  C6  <0> d   1      80.127   6.099  28.196  0.00  0.00     0.150 C 
+BRANCH   8   9
+ATOM      9  C7  <0> d   1      81.255   7.033  27.752  0.00  0.00     0.135 C 
+BRANCH   9  10
+ATOM     10  C8  <0> d   1      80.762   8.457  27.759  0.00  0.00     0.173 C 
+ATOM     11  O1  <0> d   1      81.545   9.366  27.900  0.00  0.00    -0.648 OA
+ATOM     12  O3  <0> d   1      79.454   8.715  27.612  0.00  0.00    -0.648 OA
+ENDBRANCH   9  10
+ENDBRANCH   8   9
+BRANCH   8  13
+ATOM     13  C9  <0> d   1      80.033   4.937  27.242  0.00  0.00     0.183 C 
+ATOM     14  O2  <0> d   1      80.985   4.634  26.562  0.00  0.00    -0.647 OA
+ATOM     15  O4  <0> d   1      78.891   4.238  27.148  0.00  0.00    -0.647 OA
+ENDBRANCH   8  13
+ENDBRANCH   5   8
+BRANCH   2  16
+ATOM     16  C10 <0> d   1      81.319   4.140  33.451  0.00  0.00     0.418 C 
+ATOM     17  F1  <0> d   1      80.774   4.986  34.424  0.00  0.00    -0.166 F 
+ATOM     18  F2  <0> d   1      80.798   2.852  33.609  0.00  0.00    -0.166 F 
+ATOM     19  F3  <0> d   1      82.710   4.101  33.594  0.00  0.00    -0.166 F 
+ENDBRANCH   2  16
+TORSDOF 5
+ENDMDL
+MODEL 3
+REMARK minimizedAffinity -5.82094288
+REMARK minimizedRMSD -1
+REMARK  5 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: C2_2  and  C10_14 
+REMARK    2  A    between atoms: C4_5  and  C6_8 
+REMARK    3  A    between atoms: C6_8  and  C7_9 
+REMARK    4  A    between atoms: C6_8  and  C9_12 
+REMARK    5  A    between atoms: C7_9  and  C8_10 
+ROOT
+ATOM      1  C1  <0> d   1      81.556   7.073  32.312  0.00  0.00     0.043 A 
+ATOM      2  C2  <0> d   1      80.942   6.193  33.190  0.00  0.00     0.067 A 
+ATOM      3  C3  <0> d   1      80.014   5.292  32.702  0.00  0.00     0.133 A 
+ATOM      4  N1  <0> d   1      79.707   5.268  31.419  0.00  0.00    -0.262 NA
+ATOM      5  C4  <0> d   1      80.273   6.085  30.555  0.00  0.00     0.070 A 
+ATOM      6  C5  <0> d   1      81.211   7.014  30.970  0.00  0.00     0.060 A 
+ATOM      7 Cl1  <0> d   1      81.946   8.092  29.825  0.00  0.00    -0.082 Cl
+ENDROOT
+BRANCH   5   8
+ATOM      8  C6  <0> d   1      79.890   6.012  29.099  0.00  0.00     0.150 C 
+BRANCH   8   9
+ATOM      9  C7  <0> d   1      79.611   4.557  28.717  0.00  0.00     0.135 C 
+BRANCH   9  10
+ATOM     10  C8  <0> d   1      79.671   4.409  27.219  0.00  0.00     0.173 C 
+ATOM     11  O1  <0> d   1      78.773   3.854  26.631  0.00  0.00    -0.648 OA
+ATOM     12  O3  <0> d   1      80.721   4.892  26.538  0.00  0.00    -0.648 OA
+ENDBRANCH   9  10
+ENDBRANCH   8   9
+BRANCH   8  13
+ATOM     13  C9  <0> d   1      78.653   6.839  28.862  0.00  0.00     0.183 C 
+ATOM     14  O2  <0> d   1      78.733   7.892  28.275  0.00  0.00    -0.647 OA
+ATOM     15  O4  <0> d   1      77.462   6.405  29.303  0.00  0.00    -0.647 OA
+ENDBRANCH   8  13
+ENDBRANCH   5   8
+BRANCH   2  16
+ATOM     16  C10 <0> d   1      81.282   6.217  34.657  0.00  0.00     0.418 C 
+ATOM     17  F1  <0> d   1      82.558   6.765  34.831  0.00  0.00    -0.166 F 
+ATOM     18  F2  <0> d   1      80.343   6.996  35.342  0.00  0.00    -0.166 F 
+ATOM     19  F3  <0> d   1      81.262   4.913  35.163  0.00  0.00    -0.166 F 
+ENDBRANCH   2  16
+TORSDOF 5
+ENDMDL
+MODEL 4
+REMARK minimizedAffinity -5.65571833
+REMARK minimizedRMSD -1
+REMARK  5 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: C2_2  and  C10_14 
+REMARK    2  A    between atoms: C4_5  and  C6_8 
+REMARK    3  A    between atoms: C6_8  and  C7_9 
+REMARK    4  A    between atoms: C6_8  and  C9_12 
+REMARK    5  A    between atoms: C7_9  and  C8_10 
+ROOT
+ATOM      1  C1  <0> d   1      78.888   6.583  29.466  0.00  0.00     0.043 A 
+ATOM      2  C2  <0> d   1      79.365   5.462  30.126  0.00  0.00     0.067 A 
+ATOM      3  C3  <0> d   1      80.363   4.708  29.539  0.00  0.00     0.133 A 
+ATOM      4  N1  <0> d   1      80.858   5.041  28.363  0.00  0.00    -0.262 NA
+ATOM      5  C4  <0> d   1      80.433   6.103  27.708  0.00  0.00     0.070 A 
+ATOM      6  C5  <0> d   1      79.437   6.906  28.233  0.00  0.00     0.060 A 
+ATOM      7 Cl1  <0> d   1      78.878   8.298  27.360  0.00  0.00    -0.082 Cl
+ENDROOT
+BRANCH   5   8
+ATOM      8  C6  <0> d   1      81.036   6.443  26.369  0.00  0.00     0.150 C 
+BRANCH   8   9
+ATOM      9  C7  <0> d   1      82.554   6.565  26.509  0.00  0.00     0.135 C 
+BRANCH   9  10
+ATOM     10  C8  <0> d   1      82.895   7.880  27.163  0.00  0.00     0.173 C 
+ATOM     11  O1  <0> d   1      82.578   8.918  26.632  0.00  0.00    -0.648 OA
+ATOM     12  O3  <0> d   1      83.550   7.897  28.333  0.00  0.00    -0.648 OA
+ENDBRANCH   9  10
+ENDBRANCH   8   9
+BRANCH   8  13
+ATOM     13  C9  <0> d   1      80.709   5.354  25.379  0.00  0.00     0.183 C 
+ATOM     14  O2  <0> d   1      79.574   5.209  24.993  0.00  0.00    -0.647 OA
+ATOM     15  O4  <0> d   1      81.681   4.546  24.926  0.00  0.00    -0.647 OA
+ENDBRANCH   8  13
+ENDBRANCH   5   8
+BRANCH   2  16
+ATOM     16  C10 <0> d   1      78.803   5.069  31.468  0.00  0.00     0.418 C 
+ATOM     17  F1  <0> d   1      79.198   6.005  32.430  0.00  0.00    -0.166 F 
+ATOM     18  F2  <0> d   1      77.406   5.035  31.397  0.00  0.00    -0.166 F 
+ATOM     19  F3  <0> d   1      79.282   3.804  31.823  0.00  0.00    -0.166 F 
+ENDBRANCH   2  16
+TORSDOF 5
+ENDMDL
+MODEL 5
+REMARK minimizedAffinity -5.64572001
+REMARK minimizedRMSD -1
+REMARK  5 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: C2_2  and  C10_14 
+REMARK    2  A    between atoms: C4_5  and  C6_8 
+REMARK    3  A    between atoms: C6_8  and  C7_9 
+REMARK    4  A    between atoms: C6_8  and  C9_12 
+REMARK    5  A    between atoms: C7_9  and  C8_10 
+ROOT
+ATOM      1  C1  <0> d   1      81.300   5.045  28.999  0.00  0.00     0.043 A 
+ATOM      2  C2  <0> d   1      79.936   5.138  28.769  0.00  0.00     0.067 A 
+ATOM      3  C3  <0> d   1      79.082   5.311  29.841  0.00  0.00     0.133 A 
+ATOM      4  N1  <0> d   1      79.550   5.383  31.073  0.00  0.00    -0.262 NA
+ATOM      5  C4  <0> d   1      80.840   5.303  31.329  0.00  0.00     0.070 A 
+ATOM      6  C5  <0> d   1      81.755   5.131  30.307  0.00  0.00     0.060 A 
+ATOM      7 Cl1  <0> d   1      83.452   5.020  30.656  0.00  0.00    -0.082 Cl
+ENDROOT
+BRANCH   5   8
+ATOM      8  C6  <0> d   1      81.322   5.397  32.754  0.00  0.00     0.150 C 
+BRANCH   8   9
+ATOM      9  C7  <0> d   1      80.288   6.147  33.596  0.00  0.00     0.135 C 
+BRANCH   9  10
+ATOM     10  C8  <0> d   1      80.995   7.036  34.587  0.00  0.00     0.173 C 
+ATOM     11  O1  <0> d   1      80.758   6.930  35.767  0.00  0.00    -0.648 OA
+ATOM     12  O3  <0> d   1      81.884   7.944  34.160  0.00  0.00    -0.648 OA
+ENDBRANCH   9  10
+ENDBRANCH   8   9
+BRANCH   8  13
+ATOM     13  C9  <0> d   1      81.513   4.010  33.313  0.00  0.00     0.183 C 
+ATOM     14  O2  <0> d   1      82.518   3.738  33.925  0.00  0.00    -0.647 OA
+ATOM     15  O4  <0> d   1      80.565   3.077  33.129  0.00  0.00    -0.647 OA
+ENDBRANCH   8  13
+ENDBRANCH   5   8
+BRANCH   2  16
+ATOM     16  C10 <0> d   1      79.391   5.052  27.367  0.00  0.00     0.418 C 
+ATOM     17  F1  <0> d   1      80.387   5.425  26.457  0.00  0.00    -0.166 F 
+ATOM     18  F2  <0> d   1      78.986   3.739  27.103  0.00  0.00    -0.166 F 
+ATOM     19  F3  <0> d   1      78.296   5.912  27.238  0.00  0.00    -0.166 F 
+ENDBRANCH   2  16
+TORSDOF 5
+ENDMDL
+MODEL 6
+REMARK minimizedAffinity -5.5348959
+REMARK minimizedRMSD -1
+REMARK  5 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: C2_2  and  C10_14 
+REMARK    2  A    between atoms: C4_5  and  C6_8 
+REMARK    3  A    between atoms: C6_8  and  C7_9 
+REMARK    4  A    between atoms: C6_8  and  C9_12 
+REMARK    5  A    between atoms: C7_9  and  C8_10 
+ROOT
+ATOM      1  C1  <0> d   1      81.980   4.874  30.824  0.00  0.00     0.043 A 
+ATOM      2  C2  <0> d   1      80.904   4.996  31.689  0.00  0.00     0.067 A 
+ATOM      3  C3  <0> d   1      79.850   5.820  31.343  0.00  0.00     0.133 A 
+ATOM      4  N1  <0> d   1      79.863   6.490  30.207  0.00  0.00    -0.262 NA
+ATOM      5  C4  <0> d   1      80.866   6.396  29.357  0.00  0.00     0.070 A 
+ATOM      6  C5  <0> d   1      81.955   5.590  29.636  0.00  0.00     0.060 A 
+ATOM      7 Cl1  <0> d   1      83.275   5.477  28.514  0.00  0.00    -0.082 Cl
+ENDROOT
+BRANCH   5   8
+ATOM      8  C6  <0> d   1      80.828   7.179  28.070  0.00  0.00     0.150 C 
+BRANCH   8   9
+ATOM      9  C7  <0> d   1      79.377   7.517  27.721  0.00  0.00     0.135 C 
+BRANCH   9  10
+ATOM     10  C8  <0> d   1      78.883   6.573  26.655  0.00  0.00     0.173 C 
+ATOM     11  O1  <0> d   1      79.157   6.775  25.496  0.00  0.00    -0.648 OA
+ATOM     12  O3  <0> d   1      78.138   5.510  26.993  0.00  0.00    -0.648 OA
+ENDBRANCH   9  10
+ENDBRANCH   8   9
+BRANCH   8  13
+ATOM     13  C9  <0> d   1      81.615   8.454  28.233  0.00  0.00     0.183 C 
+ATOM     14  O2  <0> d   1      82.507   8.716  27.461  0.00  0.00    -0.647 OA
+ATOM     15  O4  <0> d   1      81.325   9.297  29.237  0.00  0.00    -0.647 OA
+ENDBRANCH   8  13
+ENDBRANCH   5   8
+BRANCH   2  16
+ATOM     16  C10 <0> d   1      80.882   4.239  32.992  0.00  0.00     0.418 C 
+ATOM     17  F1  <0> d   1      80.168   3.047  32.826  0.00  0.00    -0.166 F 
+ATOM     18  F2  <0> d   1      82.193   3.946  33.384  0.00  0.00    -0.166 F 
+ATOM     19  F3  <0> d   1      80.265   5.019  33.975  0.00  0.00    -0.166 F 
+ENDBRANCH   2  16
+TORSDOF 5
+ENDMDL
+MODEL 7
+REMARK minimizedAffinity -5.43941879
+REMARK minimizedRMSD -1
+REMARK  5 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: C2_2  and  C10_14 
+REMARK    2  A    between atoms: C4_5  and  C6_8 
+REMARK    3  A    between atoms: C6_8  and  C7_9 
+REMARK    4  A    between atoms: C6_8  and  C9_12 
+REMARK    5  A    between atoms: C7_9  and  C8_10 
+ROOT
+ATOM      1  C1  <0> d   1      81.496   6.544  31.241  0.00  0.00     0.043 A 
+ATOM      2  C2  <0> d   1      80.644   5.663  31.888  0.00  0.00     0.067 A 
+ATOM      3  C3  <0> d   1      79.722   4.950  31.146  0.00  0.00     0.133 A 
+ATOM      4  N1  <0> d   1      79.642   5.104  29.839  0.00  0.00    -0.262 NA
+ATOM      5  C4  <0> d   1      80.439   5.928  29.189  0.00  0.00     0.070 A 
+ATOM      6  C5  <0> d   1      81.388   6.675  29.864  0.00  0.00     0.060 A 
+ATOM      7 Cl1  <0> d   1      82.428   7.764  29.000  0.00  0.00    -0.082 Cl
+ENDROOT
+BRANCH   5   8
+ATOM      8  C6  <0> d   1      80.311   6.063  27.693  0.00  0.00     0.150 C 
+BRANCH   8   9
+ATOM      9  C7  <0> d   1      80.636   4.723  27.030  0.00  0.00     0.135 C 
+BRANCH   9  10
+ATOM     10  C8  <0> d   1      81.786   4.901  26.072  0.00  0.00     0.173 C 
+ATOM     11  O1  <0> d   1      82.823   5.386  26.459  0.00  0.00    -0.648 OA
+ATOM     12  O3  <0> d   1      81.658   4.523  24.792  0.00  0.00    -0.648 OA
+ENDBRANCH   9  10
+ENDBRANCH   8   9
+BRANCH   8  13
+ATOM     13  C9  <0> d   1      78.902   6.468  27.343  0.00  0.00     0.183 C 
+ATOM     14  O2  <0> d   1      78.547   7.613  27.494  0.00  0.00    -0.647 OA
+ATOM     15  O4  <0> d   1      78.042   5.556  26.863  0.00  0.00    -0.647 OA
+ENDBRANCH   8  13
+ENDBRANCH   5   8
+BRANCH   2  16
+ATOM     16  C10 <0> d   1      80.722   5.484  33.382  0.00  0.00     0.418 C 
+ATOM     17  F1  <0> d   1      79.776   6.308  34.000  0.00  0.00    -0.166 F 
+ATOM     18  F2  <0> d   1      80.460   4.149  33.707  0.00  0.00    -0.166 F 
+ATOM     19  F3  <0> d   1      82.002   5.829  33.827  0.00  0.00    -0.166 F 
+ENDBRANCH   2  16
+TORSDOF 5
+ENDMDL
+MODEL 8
+REMARK minimizedAffinity -5.31742716
+REMARK minimizedRMSD -1
+REMARK  5 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: C2_2  and  C10_14 
+REMARK    2  A    between atoms: C4_5  and  C6_8 
+REMARK    3  A    between atoms: C6_8  and  C7_9 
+REMARK    4  A    between atoms: C6_8  and  C9_12 
+REMARK    5  A    between atoms: C7_9  and  C8_10 
+ROOT
+ATOM      1  C1  <0> d   1      79.840   5.068  31.920  0.00  0.00     0.043 A 
+ATOM      2  C2  <0> d   1      81.116   4.642  32.257  0.00  0.00     0.067 A 
+ATOM      3  C3  <0> d   1      82.135   4.772  31.333  0.00  0.00     0.133 A 
+ATOM      4  N1  <0> d   1      81.904   5.288  30.141  0.00  0.00    -0.262 NA
+ATOM      5  C4  <0> d   1      80.706   5.708  29.788  0.00  0.00     0.070 A 
+ATOM      6  C5  <0> d   1      79.637   5.611  30.660  0.00  0.00     0.060 A 
+ATOM      7 Cl1  <0> d   1      78.060   6.159  30.183  0.00  0.00    -0.082 Cl
+ENDROOT
+BRANCH   5   8
+ATOM      8  C6  <0> d   1      80.497   6.296  28.415  0.00  0.00     0.150 C 
+BRANCH   8   9
+ATOM      9  C7  <0> d   1      79.279   5.643  27.760  0.00  0.00     0.135 C 
+BRANCH   9  10
+ATOM     10  C8  <0> d   1      79.736   4.599  26.774  0.00  0.00     0.173 C 
+ATOM     11  O1  <0> d   1      78.959   3.762  26.378  0.00  0.00    -0.648 OA
+ATOM     12  O3  <0> d   1      81.004   4.598  26.337  0.00  0.00    -0.648 OA
+ENDBRANCH   9  10
+ENDBRANCH   8   9
+BRANCH   8  13
+ATOM     13  C9  <0> d   1      80.269   7.781  28.534  0.00  0.00     0.183 C 
+ATOM     14  O2  <0> d   1      81.029   8.459  29.183  0.00  0.00    -0.647 OA
+ATOM     15  O4  <0> d   1      79.221   8.349  27.916  0.00  0.00    -0.647 OA
+ENDBRANCH   8  13
+ENDBRANCH   5   8
+BRANCH   2  16
+ATOM     16  C10 <0> d   1      81.388   4.046  33.613  0.00  0.00     0.418 C 
+ATOM     17  F1  <0> d   1      80.804   2.777  33.690  0.00  0.00    -0.166 F 
+ATOM     18  F2  <0> d   1      82.769   3.936  33.806  0.00  0.00    -0.166 F 
+ATOM     19  F3  <0> d   1      80.843   4.870  34.603  0.00  0.00    -0.166 F 
+ENDBRANCH   2  16
+TORSDOF 5
+ENDMDL
+MODEL 9
+REMARK minimizedAffinity -5.21439314
+REMARK minimizedRMSD -1
+REMARK  5 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: C2_2  and  C10_14 
+REMARK    2  A    between atoms: C4_5  and  C6_8 
+REMARK    3  A    between atoms: C6_8  and  C7_9 
+REMARK    4  A    between atoms: C6_8  and  C9_12 
+REMARK    5  A    between atoms: C7_9  and  C8_10 
+ROOT
+ATOM      1  C1  <0> d   1      81.310   7.005  34.719  0.00  0.00     0.043 A 
+ATOM      2  C2  <0> d   1      81.422   5.631  34.860  0.00  0.00     0.067 A 
+ATOM      3  C3  <0> d   1      81.804   5.108  36.080  0.00  0.00     0.133 A 
+ATOM      4  N1  <0> d   1      82.066   5.899  37.103  0.00  0.00    -0.262 NA
+ATOM      5  C4  <0> d   1      81.965   7.210  37.008  0.00  0.00     0.070 A 
+ATOM      6  C5  <0> d   1      81.587   7.806  35.818  0.00  0.00     0.060 A 
+ATOM      7 Cl1  <0> d   1      81.464   9.533  35.700  0.00  0.00    -0.082 Cl
+ENDROOT
+BRANCH   5   8
+ATOM      8  C6  <0> d   1      82.270   8.069  38.208  0.00  0.00     0.150 C 
+BRANCH   8   9
+ATOM      9  C7  <0> d   1      81.173   7.885  39.259  0.00  0.00     0.135 C 
+BRANCH   9  10
+ATOM     10  C8  <0> d   1      80.047   8.848  38.984  0.00  0.00     0.173 C 
+ATOM     11  O1  <0> d   1      78.953   8.427  38.687  0.00  0.00    -0.648 OA
+ATOM     12  O3  <0> d   1      80.257  10.170  39.069  0.00  0.00    -0.648 OA
+ENDBRANCH   9  10
+ENDBRANCH   8   9
+BRANCH   8  13
+ATOM     13  C9  <0> d   1      83.599   7.664  38.792  0.00  0.00     0.183 C 
+ATOM     14  O2  <0> d   1      83.659   7.247  39.925  0.00  0.00    -0.647 OA
+ATOM     15  O4  <0> d   1      84.715   7.765  38.053  0.00  0.00    -0.647 OA
+ENDBRANCH   8  13
+ENDBRANCH   5   8
+BRANCH   2  16
+ATOM     16  C10 <0> d   1      81.131   4.719  33.697  0.00  0.00     0.418 C 
+ATOM     17  F1  <0> d   1      81.163   3.388  34.129  0.00  0.00    -0.166 F 
+ATOM     18  F2  <0> d   1      79.865   5.011  33.180  0.00  0.00    -0.166 F 
+ATOM     19  F3  <0> d   1      82.096   4.908  32.702  0.00  0.00    -0.166 F 
+ENDBRANCH   2  16
+TORSDOF 5
+ENDMDL
+MODEL 10
+REMARK minimizedAffinity -5.10317564
+REMARK minimizedRMSD -1
+REMARK  5 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: C2_2  and  C10_14 
+REMARK    2  A    between atoms: C4_5  and  C6_8 
+REMARK    3  A    between atoms: C6_8  and  C7_9 
+REMARK    4  A    between atoms: C6_8  and  C9_12 
+REMARK    5  A    between atoms: C7_9  and  C8_10 
+ROOT
+ATOM      1  C1  <0> d   1      79.470   4.969  28.572  0.00  0.00     0.043 A 
+ATOM      2  C2  <0> d   1      80.564   4.853  27.728  0.00  0.00     0.067 A 
+ATOM      3  C3  <0> d   1      81.836   4.936  28.260  0.00  0.00     0.133 A 
+ATOM      4  N1  <0> d   1      82.017   5.129  29.552  0.00  0.00    -0.262 NA
+ATOM      5  C4  <0> d   1      81.002   5.239  30.385  0.00  0.00     0.070 A 
+ATOM      6  C5  <0> d   1      79.700   5.165  29.926  0.00  0.00     0.060 A 
+ATOM      7 Cl1  <0> d   1      78.368   5.318  31.030  0.00  0.00    -0.082 Cl
+ENDROOT
+BRANCH   5   8
+ATOM      8  C6  <0> d   1      81.264   5.453  31.854  0.00  0.00     0.150 C 
+BRANCH   8   9
+ATOM      9  C7  <0> d   1      82.526   4.690  32.264  0.00  0.00     0.135 C 
+BRANCH   9  10
+ATOM     10  C8  <0> d   1      82.282   3.978  33.569  0.00  0.00     0.173 C 
+ATOM     11  O1  <0> d   1      81.241   3.391  33.751  0.00  0.00    -0.648 OA
+ATOM     12  O3  <0> d   1      83.218   3.997  34.530  0.00  0.00    -0.648 OA
+ENDBRANCH   9  10
+ENDBRANCH   8   9
+BRANCH   8  13
+ATOM     13  C9  <0> d   1      81.456   6.923  32.122  0.00  0.00     0.183 C 
+ATOM     14  O2  <0> d   1      81.310   7.358  33.239  0.00  0.00    -0.647 OA
+ATOM     15  O4  <0> d   1      81.791   7.749  31.118  0.00  0.00    -0.647 OA
+ENDBRANCH   8  13
+ENDBRANCH   5   8
+BRANCH   2  16
+ATOM     16  C10 <0> d   1      80.368   4.638  26.250  0.00  0.00     0.418 C 
+ATOM     17  F1  <0> d   1      79.638   3.462  26.043  0.00  0.00    -0.166 F 
+ATOM     18  F2  <0> d   1      79.668   5.722  25.709  0.00  0.00    -0.166 F 
+ATOM     19  F3  <0> d   1      81.614   4.529  25.625  0.00  0.00    -0.166 F 
+ENDBRANCH   2  16
+TORSDOF 5
+ENDMDL
+MODEL 11
+REMARK minimizedAffinity -5.05424452
+REMARK minimizedRMSD -1
+REMARK  5 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: C2_2  and  C10_14 
+REMARK    2  A    between atoms: C4_5  and  C6_8 
+REMARK    3  A    between atoms: C6_8  and  C7_9 
+REMARK    4  A    between atoms: C6_8  and  C9_12 
+REMARK    5  A    between atoms: C7_9  and  C8_10 
+ROOT
+ATOM      1  C1  <0> d   1      80.536   6.397  31.380  0.00  0.00     0.043 A 
+ATOM      2  C2  <0> d   1      79.809   5.222  31.486  0.00  0.00     0.067 A 
+ATOM      3  C3  <0> d   1      79.986   4.417  32.595  0.00  0.00     0.133 A 
+ATOM      4  N1  <0> d   1      80.838   4.753  33.544  0.00  0.00    -0.262 NA
+ATOM      5  C4  <0> d   1      81.543   5.864  33.481  0.00  0.00     0.070 A 
+ATOM      6  C5  <0> d   1      81.419   6.720  32.401  0.00  0.00     0.060 A 
+ATOM      7 Cl1  <0> d   1      82.357   8.179  32.323  0.00  0.00    -0.082 Cl
+ENDROOT
+BRANCH   5   8
+ATOM      8  C6  <0> d   1      82.499   6.204  34.595  0.00  0.00     0.150 C 
+BRANCH   8   9
+ATOM      9  C7  <0> d   1      81.760   6.156  35.934  0.00  0.00     0.135 C 
+BRANCH   9  10
+ATOM     10  C8  <0> d   1      81.449   7.559  36.388  0.00  0.00     0.173 C 
+ATOM     11  O1  <0> d   1      81.782   8.501  35.708  0.00  0.00    -0.648 OA
+ATOM     12  O3  <0> d   1      80.804   7.762  37.547  0.00  0.00    -0.648 OA
+ENDBRANCH   9  10
+ENDBRANCH   8   9
+BRANCH   8  13
+ATOM     13  C9  <0> d   1      83.630   5.208  34.609  0.00  0.00     0.183 C 
+ATOM     14  O2  <0> d   1      84.332   5.077  33.635  0.00  0.00    -0.647 OA
+ATOM     15  O4  <0> d   1      83.857   4.467  35.706  0.00  0.00    -0.647 OA
+ENDBRANCH   8  13
+ENDBRANCH   5   8
+BRANCH   2  16
+ATOM     16  C10 <0> d   1      78.838   4.826  30.404  0.00  0.00     0.418 C 
+ATOM     17  F1  <0> d   1      78.195   3.638  30.767  0.00  0.00    -0.166 F 
+ATOM     18  F2  <0> d   1      77.887   5.839  30.238  0.00  0.00    -0.166 F 
+ATOM     19  F3  <0> d   1      79.528   4.634  29.203  0.00  0.00    -0.166 F 
+ENDBRANCH   2  16
+TORSDOF 5
+ENDMDL
+MODEL 12
+REMARK minimizedAffinity -4.731637
+REMARK minimizedRMSD -1
+REMARK  5 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: C2_2  and  C10_14 
+REMARK    2  A    between atoms: C4_5  and  C6_8 
+REMARK    3  A    between atoms: C6_8  and  C7_9 
+REMARK    4  A    between atoms: C6_8  and  C9_12 
+REMARK    5  A    between atoms: C7_9  and  C8_10 
+ROOT
+ATOM      1  C1  <0> d   1      83.244   7.387  28.567  0.00  0.00     0.043 A 
+ATOM      2  C2  <0> d   1      83.954   6.371  29.187  0.00  0.00     0.067 A 
+ATOM      3  C3  <0> d   1      83.357   5.136  29.352  0.00  0.00     0.133 A 
+ATOM      4  N1  <0> d   1      82.125   4.919  28.934  0.00  0.00    -0.262 NA
+ATOM      5  C4  <0> d   1      81.421   5.860  28.336  0.00  0.00     0.070 A 
+ATOM      6  C5  <0> d   1      81.953   7.121  28.134  0.00  0.00     0.060 A 
+ATOM      7 Cl1  <0> d   1      81.015   8.355  27.353  0.00  0.00    -0.082 Cl
+ENDROOT
+BRANCH   5   8
+ATOM      8  C6  <0> d   1      80.019   5.558  27.872  0.00  0.00     0.150 C 
+BRANCH   8   9
+ATOM      9  C7  <0> d   1      79.996   4.201  27.167  0.00  0.00     0.135 C 
+BRANCH   9  10
+ATOM     10  C8  <0> d   1      80.045   4.407  25.675  0.00  0.00     0.173 C 
+ATOM     11  O1  <0> d   1      80.314   5.496  25.225  0.00  0.00    -0.648 OA
+ATOM     12  O3  <0> d   1      79.789   3.384  24.847  0.00  0.00    -0.648 OA
+ENDBRANCH   9  10
+ENDBRANCH   8   9
+BRANCH   8  13
+ATOM     13  C9  <0> d   1      79.092   5.524  29.060  0.00  0.00     0.183 C 
+ATOM     14  O2  <0> d   1      78.661   6.554  29.520  0.00  0.00    -0.647 OA
+ATOM     15  O4  <0> d   1      78.746   4.347  29.606  0.00  0.00    -0.647 OA
+ENDBRANCH   8  13
+ENDBRANCH   5   8
+BRANCH   2  16
+ATOM     16  C10 <0> d   1      85.360   6.610  29.673  0.00  0.00     0.418 C 
+ATOM     17  F1  <0> d   1      86.225   5.695  29.064  0.00  0.00    -0.166 F 
+ATOM     18  F2  <0> d   1      85.752   7.912  29.347  0.00  0.00    -0.166 F 
+ATOM     19  F3  <0> d   1      85.408   6.443  31.061  0.00  0.00    -0.166 F 
+ENDBRANCH   2  16
+TORSDOF 5
+ENDMDL
