@@ -12,13 +12,14 @@ DLSCORE is an ensemble of neural networks, trained on the recent release of the 
 
 ## Running the script
 For options, please type of the following in the terminal :
+
 `
 python dlscore.py -h
 `
 
 The output will be the following:
 
-`
+```
 usage: dlscore.py [-h] --ligand LIGAND --receptor RECEPTOR
                   [--vina_executable VINA_EXECUTABLE]
                   [--num_networks NUM_NETWORKS] [--output OUTPUT_FILE]
@@ -44,9 +45,10 @@ optional arguments:
                         general.
   --verbose {0,1}       Verbose mode. False if 0, True if 1. Default is set to
                         False.
-`
+```
 
 For a test run, type: 
+
 
 `
 bash test_run.sh
