@@ -10,9 +10,43 @@ DLSCORE is an ensemble of neural networks, trained on the recent release of the 
 - Keras
 - MGLTools
 
+## Running the script
+For options, please type of the following in the terminal :
+`
+python dlscore.py -h
+`
 
-## Running the tests
-For a test run, type the following in the terminal: 
+The output will be the following:
+
+`
+usage: dlscore.py [-h] --ligand LIGAND --receptor RECEPTOR
+                  [--vina_executable VINA_EXECUTABLE]
+                  [--num_networks NUM_NETWORKS] [--output OUTPUT_FILE]
+                  [--network_type {refined,general}] [--verbose {0,1}]
+
+Main script for running DLSCORE
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --ligand LIGAND       Ligand file. Supported file types: .pdb, .pdbqt, .mol2
+  --receptor RECEPTOR   Receptor file. Supported file types: .pdb, .pdbqt,
+                        .mol2
+  --vina_executable VINA_EXECUTABLE
+                        File path for Vina executable.
+  --num_networks NUM_NETWORKS
+                        Number of networks to use for prediction. Default:10
+  --output OUTPUT_FILE  Name of the output file. Dafault: out.csv
+  --network_type {refined,general}
+                        DLSCORE has two types of weights trained on PDB-Bind
+                        2016 refined set and general set (including refined).
+                        Any of these two variants can be used. Possible
+                        options are: general and refined. Dafault is set to
+                        general.
+  --verbose {0,1}       Verbose mode. False if 0, True if 1. Default is set to
+                        False.
+`
+
+For a test run, type: 
 
 `
 bash test_run.sh
