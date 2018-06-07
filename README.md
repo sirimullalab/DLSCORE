@@ -66,7 +66,7 @@ If you wish to contribute, submit pull requests or read more about our code of c
 
 ## Authors
 
-[Mahmudulla Hassan](https://github.com/hassanmohsin) , Dr. Olac Fuentes, Dr. Suman Sirimulla, Daniel Castaneda Mogollon
+[Mahmudulla Hassan](https://github.com/hassanmohsin) , [Dr. Olac Fuentes](http://www.cs.utep.edu/ofuentes/), [Dr. Suman Sirimulla](http://expertise.utep.edu/profiles/ssirimulla), [Daniel Castaneda Mogollon]()
 
 See also the list of [contributors](https://github.com/sirimullalab/DLSCORE/blob/master/contributors) who made this project possible.
 
