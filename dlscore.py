@@ -47,6 +47,7 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 current_dir = os.path.dirname(os.path.realpath(__file__))
 networks_dir = os.path.join(current_dir, "networks/refined")
 mgltools_dir = os.path.join(current_dir, "mgltools")
+vina_path = os.path.join(current_dir, "autodock_vina_1_1_2_linux_x86/bin/vina")
 verbose = False
 
 # The ffnet class was derived from the ffnet python package developed by Marek Wojciechowski (http://ffnet.sourceforge.net/).
@@ -2424,7 +2425,7 @@ if __name__ == "__main__":
     parser.add_argument('--receptor', action='store', dest='receptor', required=True,
                         help='Receptor file. Supported file types: .pdb, .pdbqt, .mol2')
     parser.add_argument('--vina_executable', action='store', dest='vina_executable',
-                        default='autodock_vina_1_1_2_linux_x86/bin/vina',
+                        default=vina_path,
                         help='File path for Vina executable.')
     parser.add_argument('--num_networks', action='store', dest='num_networks', type=int,
                         default=10,
