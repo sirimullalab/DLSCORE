@@ -74,7 +74,7 @@ optional arguments:
                         2016 refined set and general set (including refined).
                         Any of these two variants can be used. Possible
                         options are: general and refined. Dafault is set to
-                        general.
+                        refined.
   --verbose {0,1}       Verbose mode. False if 0, True if 1. Default is set to
                         False.
 ```
