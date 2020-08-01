@@ -9,7 +9,7 @@ DLSCORE is an ensemble of neural networks, trained on the recent release of the 
 
 ### Conda
 
-- Install the conda environment. `conda env create -f environent_gpu.yml`
+- Install the conda environment. `conda env create -f environment_gpu.yml`
 - Install MglTools (<a target='_blank' href='http://mgltools.scripps.edu/downloads'>Source</a>). Make sure `pythonsh` command works in the terminal
 - Clone this repository
 - If running on Stampede2 (TACC server), please load the module `intel/18.0.0`
