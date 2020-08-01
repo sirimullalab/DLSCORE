@@ -5,49 +5,19 @@ Purpose: The main purpose of DLSCORE is to accurately predict binding affinities
 DLSCORE is an ensemble of neural networks, trained on the recent release of the refined PDBBind data(v2016) using BINding ANAlyzer (BINANA ) descriptors. 
 
 
-## Prerequisites
-- Tensorflow
-- Keras
-- MGLTools
+## Installation 
 
-## Installation
-<ul>
- <li><b> Installing inside a python environment</b></li>
- <ol>
-  <li> Install Anaconda 3 (Download from <a href="https://www.anaconda.com/download/#linux" target="_blank">here</a>) </li>
-  <li> Create a new environment and activate it
-    
-    conda create -n <env_name> python=3.5 anaconda
-    source activate <env_name>
+### Conda
 
-  </li>  
-  <li> Install Tensorflow and Keras
+- Install the conda environment. `conda env create -f environent_gpu.yml`
+- Install MglTools (<a target='_blank' href='http://mgltools.scripps.edu/downloads'>Source</a>). Make sure `pythonsh` command works in the terminal
+- Clone this repository
+- If running on Stampede2 (TACC server), please load the module `intel/18.0.0`
 
-    pip install tensorflow
-    pip install keras
-    
-  </li>
- 
- <li> Install MglTools (<a target='_blank' href='http://mgltools.scripps.edu/downloads'>Source</a>). Make sure
-    `pythonsh` command works in the terminal</li>
- <li> Clone the code from Github
+Test the installation by runnning `bash test_run.sh`
 
-   ```git clone https://github.com/sirimullalab/dlscore.git```
- 
- </li>
- 
- <li> If running on Stampede2 (TACC server), please load the module `intel/18.0.0` </li>
- </ol>
-
-</ul>
-
-
-## Running the script
-For options, please type of the following in the terminal :
-
-`
-python dlscore.py -h
-`
+### Run prediction
+For options, run `python dlscore.py -h`
 
 The output will be the following:
 
@@ -78,13 +48,6 @@ optional arguments:
   --verbose {0,1}       Verbose mode. False if 0, True if 1. Default is set to
                         False.
 ```
-
-For a test run, type: 
-
-
-`
-bash test_run.sh
-`
 
 DLSCORE will be producing the number of networks specified with in `-num_networks`, NNScore 2.0 will display 20, and vina 1 (plus 5) . The output thrown by DLSCORE and NNScore 2.0 are pKd values, while Vina gives delta G (kcal/mol)
 
