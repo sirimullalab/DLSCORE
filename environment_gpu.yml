@@ -1,0 +1,55 @@
+name: dlscore
+channels:
+  - psi4
+  - acellera
+  - defaults
+dependencies:
+  - _libgcc_mutex=0.1=main
+  - _tflow_select=2.1.0=gpu
+  - absl-py=0.4.1=py35_0
+  - astor=0.7.1=py35_0
+  - blas=1.0=mkl
+  - ca-certificates=2020.6.24=0
+  - certifi=2018.8.24=py35_1
+  - cudatoolkit=9.2=0
+  - cudnn=7.6.5=cuda9.2_0
+  - cupti=9.2.148=0
+  - gast=0.3.3=py_0
+  - grpcio=1.12.1=py35hdbcaa40_0
+  - intel-openmp=2020.1=217
+  - libedit=3.1.20191231=h14c3975_1
+  - libffi=3.2.1=hd88cf55_4
+  - libgcc-ng=9.1.0=hdf63c60_0
+  - libgfortran-ng=7.3.0=hdf63c60_0
+  - libprotobuf=3.6.0=hdbcaa40_0
+  - libstdcxx-ng=9.1.0=hdf63c60_0
+  - markdown=2.6.11=py35_0
+  - mkl=2020.1=217
+  - ncurses=6.2=he6710b0_1
+  - numpy=1.14.2=py35hdbf6ddf_0
+  - openssl=1.0.2u=h7b6447c_0
+  - pip=10.0.1=py35_0
+  - protobuf=3.6.0=py35hf484d3e_0
+  - python=3.5.6=hc3d631a_0
+  - readline=7.0=h7b6447c_5
+  - setuptools=40.2.0=py35_0
+  - six=1.15.0=py_0
+  - sqlite=3.32.3=h62c20be_0
+  - tensorboard=1.10.0=py35hf484d3e_0
+  - tensorflow=1.10.0=gpu_py35hd9c640d_0
+  - tensorflow-base=1.10.0=gpu_py35had579c0_0
+  - tensorflow-gpu=1.10.0=hf154084_0
+  - termcolor=1.1.0=py35_1
+  - tk=8.6.10=hbc83047_0
+  - werkzeug=1.0.1=py_0
+  - wheel=0.31.1=py35_0
+  - xz=5.2.5=h7b6447c_0
+  - zlib=1.2.11=h7b6447c_3
+  - pip:
+    - h5py==2.10.0
+    - keras==2.2.0
+    - keras-applications==1.0.2
+    - keras-preprocessing==1.0.1
+    - pyyaml==5.3.1
+    - scipy==1.4.1
+prefix: /home/mhassan/miniconda3/envs/dlscore
