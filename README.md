@@ -7,11 +7,18 @@ DLSCORE is an ensemble of neural networks, trained on the recent release of the 
 
 ## Installation 
 
+### Virtual environment
+
+- Install MglTools (<a target='_blank' href='http://mgltools.scripps.edu/downloads'>Source</a>). Make sure `pythonsh` command works in the terminal
+- Install the virtualenv: `bash setup.sh`. The script will also make sure the network files are available
+- Activate the environment: `source .venv/bin/activate`
+
+This virtual environment runs DLScore using the cpu version of tensorflow. To run the GPU version, please use the conda installation described below:
+
 ### Conda
 
 - Install the conda environment. `conda env create -f environment_gpu.yml`
 - Install MglTools (<a target='_blank' href='http://mgltools.scripps.edu/downloads'>Source</a>). Make sure `pythonsh` command works in the terminal
-- Clone this repository
 - If running on Stampede2 (TACC server), please load the module `intel/18.0.0`
 - Download the network files: `./download_networks.sh`
 
