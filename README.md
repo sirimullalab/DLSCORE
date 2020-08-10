@@ -24,7 +24,7 @@ This virtual environment runs DLScore using the cpu version of tensorflow. To ru
 
 Test the installation by runnning `bash test_run.sh`
 
-### Run prediction
+## Prediction
 For options, run `python dlscore.py -h`
 
 The output will be the following:
