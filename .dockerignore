@@ -1,2 +1,5 @@
-bin/
 .git/
+networks/
+training/
+train_dir/
+vs_utils/

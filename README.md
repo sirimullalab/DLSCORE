@@ -15,7 +15,7 @@ DLSCORE is an ensemble of neural networks, trained on the recent release of the 
 
 This virtual environment runs DLScore using the cpu version of tensorflow. To run the GPU version, please use the conda installation described below:
 
-### Conda
+### Conda (GPU version)
 
 - Install the conda environment. `conda env create -f environment_gpu.yml`
 - Install MglTools (<a target='_blank' href='http://mgltools.scripps.edu/downloads'>Source</a>). Make sure `pythonsh` command works in the terminal
@@ -23,6 +23,10 @@ This virtual environment runs DLScore using the cpu version of tensorflow. To ru
 - Download the network files: `./download_networks.sh`
 
 Test the installation by runnning `bash test_run.sh`
+
+### Docker
+- Download the docker image: `docker pull sirimullalab/dlscore`
+- Run `docker run sirimullalab/dlscore -h` to see available options
 
 ## Prediction
 For options, run `python dlscore.py -h`
